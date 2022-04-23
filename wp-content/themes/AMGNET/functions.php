@@ -1,8 +1,10 @@
 <?php
 
+define('MAIN_MENU', 'main_menu');
+
 function agency_regsiter_styles()
 {
-    $version = "1";
+    $version = "4";
     
     // ------------------- css ----------------- \\
     // style css
@@ -20,3 +22,36 @@ function agency_regsiter_styles()
 
 }
 add_action('wp_enqueue_scripts', 'agency_regsiter_styles');
+
+if (function_exists('wp_nav_menu')) {
+    function agency_wp_my_menus()
+    {
+        register_nav_menus(array(
+            MAIN_MENU => __('Menu Chính', 'text_domain'),
+        ));
+    }
+    add_action('init', 'agency_wp_my_menus');
+}
+
+function get_main_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => MAIN_MENU,
+        'menu' => '',
+        'container' => '',
+        'container_class' => 'nav-item',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('main_menu', 'get_main_menu');

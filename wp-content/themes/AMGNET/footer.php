@@ -3,7 +3,8 @@
       <div class="footer-top clearfix hr">
          <div class="footer-left lt">
             <a class="footer-logo" href="https://netbiz.net.vn/" title="NetBiz">
-            <img src="./assets/imgs/logo.png" alt="NetBiz"></a>
+               <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="NetBiz" />
+            </a>
             <p>Công ty Cổ phần Tập Đoàn MCV</p>
             <p>Địa chỉ: 18bis/22/11 Nguyễn Thị Minh Khai, phường Đa Kao, quận 1, Thành phố Hồ Chí Minh.</p>
             <p>Giấy phép thiết lập trang thông tin điện tử tổng hợp trên mạng số 01/GP-STTTT do Sở Thông tin và Truyền thông TP.HCM cấp ngày 05 tháng 01 năm 2021</p>
