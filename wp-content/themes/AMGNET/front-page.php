@@ -19,12 +19,12 @@ get_header();
                <?php if ( $the_query->have_posts() ) : ?>
                   <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                      <article class="article">
-                        <a href="https://netbiz.net.vn/mot-ngay-cung-miss-grand-hongkong-sen-yang-tai-sai-gon-di-tim-mon-sinh-to-oai-oam-khong-ai-ban-1493.html" title="<?php the_title();?>" class="article-thumb">
+                        <a href="<?php the_permalink() ?>" title="<?php the_title();?>" class="article-thumb">
                            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" class="article-image">
                         </a>
                         <div class="article-info">
                            <h2 class="article-title">
-                              <a href="https://netbiz.net.vn/mot-ngay-cung-miss-grand-hongkong-sen-yang-tai-sai-gon-di-tim-mon-sinh-to-oai-oam-khong-ai-ban-1493.html" title="<?php the_title();?>">
+                              <a href="<?php the_permalink() ?>" title="<?php the_title();?>">
                                  <?php the_title();?>                    
                                  <span class="ico-image"></span><span class="ico-video"></span>                  
                               </a>

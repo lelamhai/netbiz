@@ -1333,27 +1333,27 @@ body {
           align-items: center;
 }
 
-.menu-item {
+.navbar-nav .menu-item {
   position: relative;
   padding-bottom: 4px;
 }
 
-.menu-item:hover .sub-menu {
+.navbar-nav .menu-item:hover .sub-menu {
   display: block;
 }
 
-.menu-item a {
+.navbar-nav .menu-item a {
   display: block;
   padding: 10px 15px;
   position: relative;
   white-space: nowrap;
 }
 
-.menu-item a:hover {
+.navbar-nav .menu-item a:hover {
   color: var(--color-primary);
 }
 
-.menu-item a::before {
+.navbar-nav .menu-item a::before {
   content: '';
   display: block;
   position: absolute;
@@ -1364,18 +1364,18 @@ body {
   background-color: #c2c2c2;
 }
 
-.menu-item .nav-link-home::before {
+.navbar-nav .menu-item .nav-link-home::before {
   background-color: transparent;
 }
 
-.menu-item .nav-link-home {
+.navbar-nav .menu-item .nav-link-home {
   display: inline-block;
   width: 32px;
   height: 30px;
   background: url("././assets/imgs/icon-home.png") left 10px no-repeat;
 }
 
-.menu-item .nav-link-live {
+.navbar-nav .menu-item .nav-link-live {
   width: 90px;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -1383,11 +1383,11 @@ body {
   vertical-align: -2px;
 }
 
-.menu-item .nav-link-live:hover {
+.navbar-nav .menu-item .nav-link-live:hover {
   color: #ec3993;
 }
 
-.menu-item .nav-link-live::after {
+.navbar-nav .menu-item .nav-link-live::after {
   content: '';
   display: block;
   position: absolute;
@@ -1401,19 +1401,19 @@ body {
   border-radius: 50%;
 }
 
-.menu-item .nav-link-subscribe {
+.navbar-nav .menu-item .nav-link-subscribe {
   color: #fff;
   background-color: var(--color-primary);
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.menu-item .nav-link-subscribe:hover {
+.navbar-nav .menu-item .nav-link-subscribe:hover {
   color: #fff;
   background-color: #ec3993;
 }
 
-.menu-item .nav-link-subscribe::before {
+.navbar-nav .menu-item .nav-link-subscribe::before {
   content: none;
 }
 
@@ -1432,6 +1432,10 @@ body {
   line-height: 40px;
   padding-left: 15px;
   border-top: 1px solid #fff;
+}
+
+.navbar-nav .menu-item .sub-menu li a::before {
+  background-color:transparent;
 }
 
 .dropdown-link {
@@ -2346,12 +2350,12 @@ body {
   overflow-y: auto;
 }
 
-.cat-list-item {
+.cat-list .menu-item {
   padding: 25px 18px;
   margin-right: 20px;
 }
 
-.cat-list-item.active {
+.cat-list .menu-item.current-menu-item {
   border-left: 1px solid var(--color-primary);
   background-color: #f5f5f5;
   font-weight: 700;

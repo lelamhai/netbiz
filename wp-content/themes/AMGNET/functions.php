@@ -2,11 +2,12 @@
 
 define('MAIN_MENU', 'main_menu');
 define('TOP_STORIES', 'top_stories');
+define('VIDEO_MENU', 'video_menu');
 
 
 function agency_regsiter_styles()
 {
-    $version = "4";
+    $version = "7";
     
     // ------------------- css ----------------- \\
     // style css
@@ -31,6 +32,7 @@ if (function_exists('wp_nav_menu')) {
         register_nav_menus(array(
             MAIN_MENU => __('Menu Chính', 'text_domain'),
             TOP_STORIES => __('Top Stories', 'text_domain'),
+            VIDEO_MENU => __('Menu Trong Video', 'text_domain'),
         ));
     }
     add_action('init', 'agency_wp_my_menus');
@@ -58,6 +60,30 @@ function get_main_menu()
     ));
 }
 add_shortcode('main_menu', 'get_main_menu');
+
+
+function show_video_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => VIDEO_MENU,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_video_menu', 'show_video_menu');
 
 /**
  * Setup Images Size
