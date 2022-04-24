@@ -29,7 +29,7 @@ $children = get_terms( $category->taxonomy, array(
 ?>
 <input id="category" type="hidden" value="<?php echo $category->slug ?>">
 <?php 
- switch ($cateSlug) {
+switch ($cateSlug) {
     case 'video':
         include("video.php");
         break;  	
@@ -38,7 +38,7 @@ $children = get_terms( $category->taxonomy, array(
         include("news.php");
      break;
 
- }
+}
 ?>
 
 <?php
