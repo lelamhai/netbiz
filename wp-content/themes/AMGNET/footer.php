@@ -56,4 +56,13 @@
    <?php
       wp_footer();
    ?>
+   <script>
+      $('form').submit(function () {
+      var name = $.trim($('.search-input ').val());
+      if (name  === '') {
+         alert('Mời bạn nhập');
+         return false;
+      }
+      });
+   </script>
 </html>

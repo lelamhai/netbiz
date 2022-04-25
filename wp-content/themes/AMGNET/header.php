@@ -32,13 +32,10 @@
                         <a href="https://www.youtube.com/channel/UCQHJtnMKQMSk-zMrTmBPzRg" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-youtube"></i></a>
                         <a href="https://vt.tiktok.com/ZSeCFXFyA/" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-tiktok"></i></a>
                      </div>
-                     <form id="frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch">
-                        <input class="search-input " type="text" placeholder="" onkeypress="" name="q" value="">
-                        <i class="btn search-btn" name="submit" value="" onclick=""></i>
+                     <form id="frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
+                        <input class="search-input " type="text" placeholder="" onkeypress="" name="s" value="">
+                        <button class="btn search-btn" name="submit" value="" onclick=""></button>
                      </form>
-                     <div class="site-login hidden">
-                        <a href="https://netbiz.net.vn/" class="site-login-btn">Login</a>
-                     </div>
                   </div>
                </div>
             </div>
