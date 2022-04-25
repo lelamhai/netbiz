@@ -15,7 +15,7 @@
             <div class="wrapper">
                <div class="logo-bar">
                   <div class="logo-bar-left">
-                     <h1 class="logo"><a href="https://netbiz.net.vn/" title="NetBiz">
+                     <h1 class="logo"><a href="<?php echo get_home_url()?>" title="NetBiz">
                            <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="NetBiz" />
                         </a>
                      </h1>
@@ -24,10 +24,8 @@
                      <div class="social-links">
                         <a href="https://www.facebook.com/MCV.NetbizEntertainment" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.youtube.com/channel/UCQHJtnMKQMSk-zMrTmBPzRg" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-youtube"></i></a>
-                        <!-- <a href="" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-facebook-messenger"></i></a> -->
                         <a href="https://vt.tiktok.com/ZSeCFXFyA/" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-tiktok"></i></a>
                      </div>
-                     <a href="https://netbiz.net.vn/" target="_blank" class="icon-global hidden">International</a>
                      <form id="frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch">
                         <input class="search-input " type="text" placeholder="" onkeypress="" name="q" value="">
                         <i class="btn search-btn" name="submit" value="" onclick=""></i>

@@ -4,10 +4,17 @@ define('MAIN_MENU', 'main_menu');
 define('TOP_STORIES', 'top_stories');
 define('VIDEO_MENU', 'video_menu');
 
+define('FOOTER_1', 'footer_1');
+define('FOOTER_2', 'footer_2');
+define('FOOTER_3', 'footer_3');
+define('FOOTER_4', 'footer_4');
+define('FOOTER_5', 'footer_5');
+define('FOOTER_6', 'footer_6');
+
 
 function agency_regsiter_styles()
 {
-    $version = "7";
+    $version = "10";
     
     // ------------------- css ----------------- \\
     // style css
@@ -33,6 +40,12 @@ if (function_exists('wp_nav_menu')) {
             MAIN_MENU => __('Menu Chính', 'text_domain'),
             TOP_STORIES => __('Top Stories', 'text_domain'),
             VIDEO_MENU => __('Menu Trong Video', 'text_domain'),
+            FOOTER_1 => __('Menu Footer 1', 'text_domain'),
+            FOOTER_2 => __('Menu Footer 2', 'text_domain'),
+            FOOTER_3 => __('Menu Footer 3', 'text_domain'),
+            FOOTER_4 => __('Menu Footer 4', 'text_domain'),
+            FOOTER_5 => __('Menu Footer 5', 'text_domain'),
+            FOOTER_6 => __('Menu Footer 6', 'text_domain'),
         ));
     }
     add_action('init', 'agency_wp_my_menus');
@@ -84,6 +97,52 @@ function show_video_menu()
     ));
 }
 add_shortcode('show_video_menu', 'show_video_menu');
+
+function show_footer1_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_1,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer1_menu', 'show_footer1_menu');
+
+function show_footer2_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_2,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer2_menu', 'show_footer2_menu');
 
 /**
  * Setup Images Size

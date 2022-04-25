@@ -50,13 +50,17 @@
                <div class="clearfix">
                    <?php
                        $tags = get_the_tags(get_the_ID());
-                       $listTags = array();
-                       foreach ( $tags as $tag ) {
-                        array_push($listTags, $tag ->term_id);
-                           ?>
-                                <a class="tag-item" href="<?php get_tag_link($tag ->term_id)?>" title="<?php echo $tag ->name?>"><?php echo $tag ->name?></a>
-                           <?php
+                       if($tags)
+                       {
+                            $listTags = array();
+                            foreach ( $tags as $tag ) {
+                                array_push($listTags, $tag ->term_id);
+                                ?>
+                                        <a class="tag-item" href="<?php get_tag_link($tag ->term_id)?>" title="<?php echo $tag ->name?>"><?php echo $tag ->name?></a>
+                                <?php
+                            }
                        }
+                       
                    ?>
                </div>
             </div>
