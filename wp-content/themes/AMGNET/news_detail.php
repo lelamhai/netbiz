@@ -27,6 +27,22 @@
             <div class="post-subtitle hide-empty"></div>
             <h1 class="post-title"><?php the_title()?></h1>
         
+            <div class="post-share mb15">
+                <span><a name="fb_share" target="_blank" type="button" href="https://www.facebook.com/sharer.php?u=http://localhost/AMGNet/&t=TEst">Chia sẻ</a></span>
+
+                <div class="post-share-item zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize="false" style="position: relative; display: inline-block; width: 70px; height: 20px;"><iframe id="1a3ce1f4-3e6e-45f4-893b-23e63c5f5676" name="1a3ce1f4-3e6e-45f4-893b-23e63c5f5676" frameborder="0" allowfullscreen="" scrolling="no" width="70px" height="20px" src="https://button-share.zalo.me/share_inline?id=1a3ce1f4-3e6e-45f4-893b-23e63c5f5676&amp;layout=1&amp;color=blue&amp;customize=false&amp;width=70&amp;height=20&amp;isDesktop=true&amp;url=https%3A%2F%2Fnetbiz.net.vn%2Fhien-ho-viet-thu-tay-xin-loi-kin-2-mat-giay-nhung-dan-mang-van-dong-long-mia-mai-1527.html&amp;d=eyJ1cmwiOiJodHRwczovL25ldGJpei5uZXQudm4vaGllbi1oby12aWV0LXRodS10YXkteGluLWxvaS1raW4tMi1tYXQtZ2lheS1uaHVuZy1kYW4tbWFuZy12YW4tZG9uZy1sb25nLW1pYS1tYWktMTUyNy5odG1sIn0%253D&amp;shareType=0" style="position: absolute; z-index: 99; top: 0px; left: 0px;"></iframe></div>
+                <!-- <div class="rt">
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&amp;su=Hiền Hồ viết thư tay xin lỗi kín 2 mặt giấy nhưng dân mạng vẫn đồng lòng mỉa mai&amp;to&amp;body=https://netbiz.net.vn/hien-ho-viet-thu-tay-xin-loi-kin-2-mat-giay-nhung-dan-mang-van-dong-long-mia-mai-1527.html&amp;fs=1&amp;tf=1" target="_blank" rel="nofollow" title="Chia sẻ bài viết này"><i class="fas fa-envelope"></i></a>
+                    <a id="printButton" href="https://netbiz.net.vn/apicenter@/print_article&amp;i=1527" target="_blank" rel="nofollow"><span> | </span><i class="fas fa-print"></i></a>
+                </div> -->
+            </div>
+
+
+
+
+
+
+
             <div class="post-meta mb20">
                <span class="post-publish-time"><span class="format_time"><?php echo get_the_date("d/m/Y H:i") ?></span></span>
                <a id="postCategory" href="<?php echo get_category_link($cateID)?>" class="article-catname mr10"><?php echo $cateName?></a>
@@ -111,6 +127,7 @@
                <!-- 21 -->
                
                <?php 
+                $count_post = 10;
                 $args = array(
                     'post_type' => 'post',
                     'post_status'  => 'publish',
@@ -119,6 +136,7 @@
 
                 );  
                 $the_query = new WP_Query( $args );
+                $total = $the_query->found_posts;
                 if ( $the_query->have_posts() ) : ?>
                     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
@@ -150,9 +168,17 @@
                                 </div>
                             </div>
                         </article>
-
+                        
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>
+                    <?php
+                        if($total > $count_post)
+                        {
+                            ?>
+                                <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
+                            <?php
+                        }
+                    ?>
                 <?php else : ?>
                     <article class="article">
                         Chưa có dữ liệu
@@ -160,7 +186,6 @@
                 <?php endif; ?>
             </div>
          </div>
-         <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
       </div>
       <div class="w380 rt">
          <!-- 22 -->

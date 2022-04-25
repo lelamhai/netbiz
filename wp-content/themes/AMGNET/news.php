@@ -77,8 +77,8 @@
                     'post_type' => 'post',
                     'post_status'  => 'publish',
                     'category__in' => $category->term_id,                                         
-                    'posts_per_page' => 14,
-                    'offset'         => 4
+                    'posts_per_page' => 4,
+                    'offset'         => 1
                 );  
                 $the_query = new WP_Query( $args );
                 if ( $the_query->have_posts() ) : ?>
@@ -91,7 +91,7 @@
                                 <h3 class="article-title">
                                 <a href="<?php the_permalink() ?>" title="<?php the_title()?>">
                                     <?php the_title()?>                    
-                                    <span class="ico-image"></span>                  
+                                    <!-- <span class="ico-image"></span>                   -->
                                 </a>
                                 </h3>
                                 <div class="article-meta">
@@ -129,16 +129,17 @@
             <div class="w720 lt">
           
                   <!-- 21 -->
-                     <?php 
+                     <?php
+                        $count_post = 10;
                         $args = array(
                             'post_type' => 'post',
                             'post_status'  => 'publish',
                             'category__in' => $category->term_id,                                         
-                            'posts_per_page' => 4,
-                            'offset'         => 1
+                            'posts_per_page' => 14,
+                            'offset'         => 4
                         );  
                         $the_query = new WP_Query( $args );
-           
+                        $total = $the_query->found_posts;
 
                         if ( $the_query->have_posts() ) : ?>
                             <div class="cat-listing title-2228 no-desc no-publish-time article-bdb-30 thumb-w240">
@@ -155,9 +156,19 @@
                                                     </a>
                                                     </h3>
                                                     <div class="article-meta">
-                                                    <a href="<?php echo get_category_link($cateID)?>" class="article-catname">
-                                                        <?php echo get_cat_name( $cateID )?>    
-                                                    </a>
+                                                        <?php 
+                                                            $categories = get_the_category(get_the_ID());
+                                                            foreach( $categories as $category ) {
+                                                                if($category ->category_parent != 0)
+                                                                {
+                                                                    ?>
+                                                                        <a href="<?php echo get_category_link($category->term_id)?>" class="article-catname">
+                                                                            <?php echo $category->name?>
+                                                                        </a>
+                                                                    <?php
+                                                                }
+                                                            }
+                                                        ?>
                                                     <span class="post-publish-time"><?php echo get_the_date("d/m/Y") ?></span>
                                                     </div>
                                                 </div>
@@ -166,7 +177,14 @@
                                         <?php wp_reset_postdata(); ?>
                                 </div>
                             </div>
-                            <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
+                            <?php
+                                if($total > $count_post)
+                                {
+                                    ?>
+                                        <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
+                                    <?php
+                                }
+                            ?>
                         <?php else : ?>
                             <article class="article">
                                 Chưa có dữ liệu
@@ -185,12 +203,12 @@
                <div class="cat-content">
                      <?php 
                         $args = array(
-                              'post_type' => 'post',
-                              'post_status'  => 'publish',
-                              'meta_key'			=> 'views',
+                              'post_type'       => 'post',
+                              'post_status'     => 'publish',
+                              'meta_key'		=> 'views',
                               'orderby'			=> 'meta_value_num',
-                              'order'				=> 'DESC',                                        
-                              'posts_per_page' => 1,
+                              'order'		    => 'DESC',                                        
+                              'posts_per_page'  => 1,
                               // 'offset'         => 1
                         );  
                         $the_query = new WP_Query( $args );
@@ -208,9 +226,17 @@
                                     </h3>
                                     <div class="article-meta">
                                        <span class="post-publish-time">23/04/2022</span>
-                                       <a href="<?php echo get_category_link($cateID)?>" class="article-catname">
-                                             <?php echo get_cat_name( $cateID )?>    
-                                       </a>
+                                       <?php
+                                            $categories=get_the_category(get_the_ID());
+                                            foreach($categories as $category) {
+                                                if($category->category_parent == 0)
+                                                {
+                                                    ?>
+                                                        <a href="<?php echo get_category_link($category->term_id)?>" class="article-catname"><?php echo $category->name ?></a>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
                                        <div class="article-desc"><?php the_excerpt()?></div>
                                     </div>
                                  </div>

@@ -1,5 +1,4 @@
 <div class="webpage pc-video">
-    
     <div class="wrapper breadcrumb mt40 pb20">
         <div class="cat-title text-center">
             <div class="cat-name mb20">
@@ -30,7 +29,7 @@
                     $args = array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        'category_name' => 'video',
+                        'category__in' => $category->term_id,  
                         'posts_per_page' => 1,
                     );
                     $the_query = new WP_Query( $args ); ?>
@@ -63,7 +62,7 @@
                             </div>
                             <h1 class="video-title"><?php the_title()?></h1>
                             <div class="video-meta mb20">
-                                <span class="view-count"><span class="c-pink">2</span> lượt xem</span>
+                                <span class="view-count"><span class="c-pink"><?php echo get_field("views")?></span> lượt xem</span>
                                 <span class="video-publish-time">| <?php echo get_the_date("d/m/Y H:i") ?></span>
                             </div>
                             <div class="video-desc"><?php the_content()?></div>
@@ -111,15 +110,18 @@
                 <!-- 23 -->
 
                         <?php 
+                        $count_post = 10;
                         $args = array(
                             'post_type' => 'post',
                             'post_status' => 'publish',
-                            'category_name' => $category -> slug,
-                            'posts_per_page' => 1,
-                            // 'offset'         => 1
+                            'category__in' => $category->term_id,  
+                            'posts_per_page' => 11,
+                            'offset'         => 1
                         );
-                        $the_query = new WP_Query( $args ); ?>
-                            
+                        $the_query = new WP_Query( $args ); 
+                        $total = $the_query->found_posts;
+                        ?>
+
                         <?php if ( $the_query->have_posts() ) : ?>
                             <div class="cat-listing video-listing title-2228 no-desc thumb-w240 mb40">
                                 <div class="cat-content __MB_LIST_ITEM clearfix">
@@ -161,7 +163,7 @@
                                                             }
                                                         }
                                                     ?>
-                                                <span class="icon-view hide-empty">1 lượt xem</span>
+                                                <span class="icon-view hide-empty"><?php echo get_field("views")?> lượt xem</span>
                                             </div>
                                         </div>
                                     </article>
@@ -169,7 +171,14 @@
                                     <?php wp_reset_postdata(); ?>
                                 </div>
                             </div>
-                            <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
+                            <?php
+                                if($total > $count_post)
+                                {
+                                    ?>
+                                        <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
+                                    <?php
+                                }
+                            ?>
                         <?php else : ?>
                             <article class="article">
                                 Chưa có dữ liệu

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi" class="">
    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title><?php echo get_bloginfo( 'name' );?></title>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1" />
+         <title><?php echo get_bloginfo( 'name' );?></title>
+         <meta property="og:url"           content="<?php echo get_home_url()?>" />
+         <meta property="og:type"          content="website" />
+         <meta property="og:title"         content="<?php echo get_bloginfo( 'name' );?>" />
+         <meta property="og:description"   content="<?php the_excerpt()?>" />
+         <meta property="og:image"         content="<?php the_post_thumbnail_url()?>" />
+
         <?php
             wp_head();
         ?>
@@ -45,3 +51,4 @@
                ?>
             </ul>
          </nav>
+         <span class="gotop" style="display: block;"><span class="arrow-up"></span></span>
