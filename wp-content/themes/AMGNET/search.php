@@ -6,6 +6,8 @@ if($_GET['s'] && !empty($_GET['s']))
     $key = $_GET['s'];
 }
 ?>
+
+<input type="hidden" value="<?php echo $key?>" id="input-search">
 <div class="webpage pc-list">
    <div class="wrapper breadcrumb mt40 pb20">
       <div class="cat-title text-center">
@@ -38,7 +40,7 @@ if($_GET['s'] && !empty($_GET['s']))
 
                         if ( $the_query->have_posts() ) : ?>
                             <div class="cat-listing title-2228 no-desc no-publish-time article-bdb-30 thumb-w240">
-                                <div class="cat-content __MB_LIST_ITEM" style="padding-bottom: 30px">
+                                <div class="cat-content __MB_LIST_ITEM" style="padding-bottom: 30px" id="h-loadmore">
                                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                                             <article class="article">
                                                 <a href="<?php the_permalink() ?>" title="<?php the_title()?>" class="article-thumb">

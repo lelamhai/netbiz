@@ -2,6 +2,7 @@
 <html lang="vi" class="">
    <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" > 
          <meta name="viewport" content="width=device-width, initial-scale=1" />
          <title><?php echo get_bloginfo( 'name' );?></title>
          <meta property="og:url"           content="<?php echo get_home_url()?>" />
@@ -15,7 +16,7 @@
         ?>
    </head>
    <body>
-      
+      <input type="hidden" id="url-home" value="<?php echo get_home_url()?>">
       <div class="webpage pc-home">
          <header class="header">
             <div class="wrapper">
@@ -34,7 +35,7 @@
                      </div>
                      <form id="frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
                         <input class="search-input " type="text" placeholder="" onkeypress="" name="s" value="">
-                        <button class="btn search-btn" name="submit" value="" onclick=""></button>
+                        <button class="btn search-btn" value="" onclick=""></button>
                      </form>
                   </div>
                </div>
