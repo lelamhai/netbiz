@@ -1,3 +1,4 @@
+<input type="text" value="14" id="offset">
 <div class="webpage pc-list">
    <div class="wrapper breadcrumb mt40 pb20">
       <div class="cat-title text-center">
@@ -77,7 +78,7 @@
                     'post_type' => 'post',
                     'post_status'  => 'publish',
                     'category__in' => $category->term_id,                                         
-                    'posts_per_page' => 4,
+                    'posts_per_page' => 3,
                     'offset'         => 1
                 );  
                 $the_query = new WP_Query( $args );
@@ -135,15 +136,15 @@
                             'post_type' => 'post',
                             'post_status'  => 'publish',
                             'category__in' => $category->term_id,                                         
-                            'posts_per_page' => 14,
+                            'posts_per_page' => 10,
                             'offset'         => 4
                         );  
                         $the_query = new WP_Query( $args );
-                        $total = $the_query->found_posts;
+                        $total = $the_query->post_count;
 
                         if ( $the_query->have_posts() ) : ?>
                             <div class="cat-listing title-2228 no-desc no-publish-time article-bdb-30 thumb-w240">
-                                <div class="cat-content __MB_LIST_ITEM">
+                                <div class="cat-content __MB_LIST_ITEM" id="h-loadmore" style="padding-bottom: 30px;">
                                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                                             <article class="article">
                                                 <a href="<?php the_permalink() ?>" title="<?php the_title()?>" class="article-thumb">
@@ -271,7 +272,9 @@
                                  </a>
                                  <div class="article-info">
                                     <h3 class="article-title">
-                                       <a href="<?php the_permalink() ?>" title="<?php the_title()?>"><?php the_title()?>                      </a>
+                                        <a href="<?php the_permalink() ?>" title="<?php the_title()?>">
+                                            <?php the_title()?>                      
+                                        </a>
                                     </h3>
                                     <div class="article-meta">
                                        <span class="post-publish-time"><?php echo get_the_date("d/m/Y") ?></span>

@@ -27,7 +27,8 @@ $children = get_terms( $category->taxonomy, array(
 
 
 ?>
-<input id="category" type="hidden" value="<?php echo $category->slug ?>">
+<input id="input-news" type="hidden" value="<?php echo $category->slug ?>">
+<input id="input-category" type="hidden" value="<?php echo $cateSlug ?>">
 <?php 
 switch ($cateSlug) {
     case 'video':
@@ -43,4 +44,5 @@ switch ($cateSlug) {
 
 <?php
 get_footer();
-?>  
+?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri()."/assets/js/category.js"?>"></script>

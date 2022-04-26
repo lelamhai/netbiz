@@ -182,7 +182,6 @@ function show_top_stories()
 add_shortcode('show_top_stories', 'show_top_stories');
 
 // AJAX
-
 function more_function() {
     $json = array();
     if($_REQUEST["key"] && !empty($_REQUEST["key"]))
@@ -191,17 +190,21 @@ function more_function() {
             'post_type' => 'post',
             'post_status'  => 'publish',
             'posts_per_page' => 10,
-            // 'paged' => 2,
+            'paged' => $_REQUEST["paged"],
             's' => $_REQUEST["key"],
         );
-        
         $the_query = new WP_Query( $args );
+        $total = $the_query ->post_count;
+
+        if($total <= 10)
+        {
+            $json['isCount'] = true;
+        }
         $get_category_link = "";
         $cateName = "";
         $html = "";
         if ( $the_query->have_posts() ) : 
             while ( $the_query->have_posts() ) : $the_query->the_post();
-            
             $categories = get_the_category(get_the_ID());
             foreach( $categories as $category ) {
                 if($category ->category_parent != 0)
@@ -210,7 +213,6 @@ function more_function() {
                     $cateName = $category->name;
                 }
             }
-
             $html = $html . '<article class="article">
                                 <a href="'.get_the_permalink().'" title="'.get_the_title().'" class="article-thumb">
                                     <img src="'.get_the_post_thumbnail_url().'" alt="'.get_the_title().'" class="article-image">
@@ -240,3 +242,100 @@ function more_function() {
 }
 add_action('wp_ajax_more', 'more_function');
 add_action('wp_ajax_nopriv_more', 'more_function');
+
+
+
+function news_function() {
+    $json = array();
+
+    if($_REQUEST["slug"] && !empty($_REQUEST["slug"]))
+    {
+        $args = array(
+            'post_type'     => 'post',
+            'post_status'   => 'publish',
+            'category_name'  => $_REQUEST["slug"],
+            'posts_per_page'=> 10,
+            'paged'         => $_REQUEST["paged"],
+            'offset'        => $_REQUEST["offset"],
+        );
+        $the_query = new WP_Query( $args );
+        $total = $the_query ->post_count;
+        if($total <= 10)
+        {
+            $json['isCount'] = true;
+        }
+
+        $get_category_link = "";
+        $cateName = "";
+        $html = "";
+        $author = "";
+        if ( $the_query->have_posts() ) : 
+            while ( $the_query->have_posts() ) : $the_query->the_post();
+            $categories = get_the_category(get_the_ID());
+            foreach( $categories as $category ) {
+                if($category ->category_parent != 0)
+                {
+                    $get_category_link = get_category_link($category->term_id);
+                    $cateName = $category->name;
+                }
+            }
+
+            if($_REQUEST["category"] == "video")
+            {
+                $html = $html . '<article class="article">
+                                        <a class="article-thumb" href="'.get_the_permalink().'" title="<?php the_title()?>">
+                                            <img class="article-image" src="'.get_the_post_thumbnail_url().'" alt="'.get_the_title().'" />
+                                        </a>
+                                        <div class="article-info">
+                                            <h3 class="article-title">
+                                                <a href="'.get_the_permalink().'" title="'.get_the_title().'">
+                                                    '.get_the_title().'
+                                                </a>
+                                            </h3>
+                                            <div class="article-meta">
+                                                <span class="article-author">
+                                                    <span class="js-video-author-name"> '.get_field("author").'</span>
+                                                </span>
+                                                <span class="article-publish-time no-before">'.get_the_date("d/m/Y").'</span>
+                                                <a href="'.$get_category_link.'" class="article-catname">
+                                                    '.$cateName.'
+                                                </a>
+                                                <span class="icon-view hide-empty">'.get_field("views").' lượt xem</span>
+                                            </div>
+                                        </div>
+                                    </article>';
+
+
+            } else {
+                $html = $html . '<article class="article">
+                                <a href="'.get_the_permalink().'" title="'.get_the_title().'" class="article-thumb">
+                                    <img src="'.get_the_post_thumbnail_url().'" alt="'.get_the_title().'" class="article-image">
+                                </a>
+                                <div class="article-info">
+                                    <h3 class="article-title">
+                                        <a href="'.get_the_permalink().'" title="'.get_the_title().'">
+                                            '.get_the_title().'
+                                        </a>
+                                    </h3>
+                                    <div class="article-meta">
+                                        <a href="'.$get_category_link.'" class="article-catname">
+                                            '.$cateName.'
+                                        </a>
+                                        <span class="post-publish-time">"'.get_the_date("d/m/Y").'"</span>
+                                    </div>
+                                </div>
+                            </article>';
+            }
+            
+
+                           
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        $json['html'] = $html;
+        wp_send_json_success( $json );
+    }
+    wp_die(); 
+}
+add_action('wp_ajax_news', 'news_function');
+add_action('wp_ajax_nopriv_news', 'news_function');

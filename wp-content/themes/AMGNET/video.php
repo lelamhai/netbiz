@@ -1,3 +1,4 @@
+<input type="hidden" value="11" id="offset">
 <div class="webpage pc-video">
     <div class="wrapper breadcrumb mt40 pb20">
         <div class="cat-title text-center">
@@ -115,16 +116,16 @@
                             'post_type' => 'post',
                             'post_status' => 'publish',
                             'category__in' => $category->term_id,  
-                            'posts_per_page' => 11,
+                            'posts_per_page' => 10,
                             'offset'         => 1
                         );
                         $the_query = new WP_Query( $args ); 
-                        $total = $the_query->found_posts;
+                        $total = $the_query->post_count;
                         ?>
 
                         <?php if ( $the_query->have_posts() ) : ?>
                             <div class="cat-listing video-listing title-2228 no-desc thumb-w240 mb40">
-                                <div class="cat-content __MB_LIST_ITEM clearfix">
+                                <div class="cat-content __MB_LIST_ITEM clearfix" id="h-loadmore">
                                     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                                     <article class="article">
                                         <a class="article-thumb" href="<?php the_permalink() ?>" title="<?php the_title()?>">
@@ -172,7 +173,7 @@
                                 </div>
                             </div>
                             <?php
-                                if($total > $count_post)
+                                if($total >= $count_post)
                                 {
                                     ?>
                                         <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>

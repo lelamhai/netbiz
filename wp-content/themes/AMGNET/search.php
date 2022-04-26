@@ -33,6 +33,7 @@ if($_GET['s'] && !empty($_GET['s']))
                             'post_type' => 'post',
                             'post_status'  => 'publish',
                             'posts_per_page' => 10,
+                            'paged' => 1,
                             's' => $key,
                         );  
                         $the_query = new WP_Query( $args );
@@ -97,3 +98,4 @@ if($_GET['s'] && !empty($_GET['s']))
 <?php
 get_footer();
 ?>  
+<script type="text/javascript" src="<?php echo get_template_directory_uri()."/assets/js/search.js"?>"></script>
