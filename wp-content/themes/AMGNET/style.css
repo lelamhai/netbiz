@@ -2550,6 +2550,9 @@ body {
   display: none;
 }
 
+
+
+
 .post-share {
     display: flex;
     justify-content: flex-start;
@@ -2568,5 +2571,30 @@ body {
 
 .fb a:hover {
   color: #fff;
+}
+
+.post .alignleft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post .aligncenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post .alignright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+} 
+
+.post .alignleft figcaption,
+.post .aligncenter figcaption,
+.post .alignright figcaption {
+  color: #999;
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

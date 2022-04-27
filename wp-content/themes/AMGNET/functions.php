@@ -14,7 +14,7 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "11";
+    $version = "13";
     
     // ------------------- css ----------------- \\
     // style css
@@ -154,34 +154,6 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 
 // =========================================================== LOAD DATA ===================================================== \\
-function show_top_stories()
-{
-    $menu_name = TOP_STORIES;
-    if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-        $menu = wp_get_nav_menu_object($locations[$menu_name]);
-        $menu_items = wp_get_nav_menu_items($menu->term_id);
-        foreach ((array) $menu_items as $key => $menu_item) {
-            $id =  $menu_item->object_id;
-            // var_dump($menu_item);exit;
-            ?>
-                <article class="article">
-                    <a href="<?php echo $menu_item->url;?>" title="<?php echo $menu_item->title?>" class="article-thumb">
-                        <img src="<?php echo get_the_post_thumbnail_url($id);?>" alt="“<?php echo $menu_item->title?>" class="article-image">
-                    </a>
-                     <div class="article-info">
-                        <h3 class="article-title">
-                            <a href="<?php echo $menu_item->url;?>" title="“<?php echo $menu_item->title?>">“<?php echo $menu_item->title?>
-                                <span class="ico-video"></span>                  
-                            </a>
-                        </h3>
-                    </div>
-               </article>
-            <?php
-        }
-    }
-}
-add_shortcode('show_top_stories', 'show_top_stories');
-
 // AJAX
 function more_function() {
     $json = array();
