@@ -29,9 +29,13 @@ foreach($categories as $category) {
 }
 ?>
 
+<input id="input-slug-parent" type="hidden" value="<?php echo $cateSlug ?>">
+
+
 <?php
 get_footer();
 $count = (int) get_field('views');
 $count++;
 update_field('views', $count);
 ?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri()."/assets/js/detail.js"?>"></script>

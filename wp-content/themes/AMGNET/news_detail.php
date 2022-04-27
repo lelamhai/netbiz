@@ -28,16 +28,15 @@
             <h1 class="post-title"><?php the_title()?></h1>
         
             <div class="post-share mb15">
-                <span><a name="fb_share" target="_blank" type="button" href="https://www.facebook.com/sharer.php?u=http://localhost/AMGNet/&t=TEst">Chia sẻ</a></span>
-
-                <div class="post-share-item zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize="false" style="position: relative; display: inline-block; width: 70px; height: 20px;"><iframe id="1a3ce1f4-3e6e-45f4-893b-23e63c5f5676" name="1a3ce1f4-3e6e-45f4-893b-23e63c5f5676" frameborder="0" allowfullscreen="" scrolling="no" width="70px" height="20px" src="https://button-share.zalo.me/share_inline?id=1a3ce1f4-3e6e-45f4-893b-23e63c5f5676&amp;layout=1&amp;color=blue&amp;customize=false&amp;width=70&amp;height=20&amp;isDesktop=true&amp;url=https%3A%2F%2Fnetbiz.net.vn%2Fhien-ho-viet-thu-tay-xin-loi-kin-2-mat-giay-nhung-dan-mang-van-dong-long-mia-mai-1527.html&amp;d=eyJ1cmwiOiJodHRwczovL25ldGJpei5uZXQudm4vaGllbi1oby12aWV0LXRodS10YXkteGluLWxvaS1raW4tMi1tYXQtZ2lheS1uaHVuZy1kYW4tbWFuZy12YW4tZG9uZy1sb25nLW1pYS1tYWktMTUyNy5odG1sIn0%253D&amp;shareType=0" style="position: absolute; z-index: 99; top: 0px; left: 0px;"></iframe></div>
+                <span class="fb"><a name="fb_share" target="_blank" type="button" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()) ?>&t=<?php echo get_the_permalink()?>">Chia sẻ</a></span>
+                <span><div class="zalo-share-button" data-href="" data-oaid="2548026458213374323" data-layout="1" data-color="blue" data-customize="false"></div></span>
             </div>
 
             <div class="post-meta mb20">
                <span class="post-publish-time"><span class="format_time"><?php echo get_the_date("d/m/Y H:i") ?></span></span>
                <a id="postCategory" href="<?php echo get_category_link($cateID)?>" class="article-catname mr10"><?php echo $cateName?></a>
             </div>
-            <div class="post-desc"><?php the_excerpt()?></div>
+            <div class="post-desc"><?php    ?></div>
             <div class="post-content __MASTERCMS_CONTENT ">
                <?php the_content()?>
             </div>
@@ -47,10 +46,7 @@
                <table class="__mb_article_in_image">
                </table>
             </div>
-            <div class="hidden">
-               <iframe rel="nofollow" src="./Hiền Hồ viết thư tay xin lỗi kín 2 mặt giấy nhưng dân mạng vẫn đồng lòng mỉa mai - Netbiz_files/article_statistic&amp;aid=MTUyNw==&amp;sid=n1f65qav31hkbjr6o1f10t2gh7.html" width="0" height="0"></iframe>            <input type="hidden" name="__printURL" value="https://netbiz.net.vn/hien-ho-viet-thu-tay-xin-loi-kin-2-mat-giay-nhung-dan-mang-van-dong-long-mia-mai-1527.html">
-               <input type="hidden" name="__PARAMS_ID_WIDGET" class="__PARAMS_ID_WIDGET" data-type="user_comments" value="MTUyNw==">
-            </div>
+            
             <div class="post-tag mt15 mb30">
                <div class="tag-title">Tags:</div>
                <div class="clearfix">

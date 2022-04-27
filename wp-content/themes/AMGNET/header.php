@@ -5,11 +5,11 @@
          <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" > 
          <meta name="viewport" content="width=device-width, initial-scale=1" />
          <title><?php echo get_bloginfo( 'name' );?></title>
-         <meta property="og:url"           content="<?php echo get_home_url()?>" />
+         <meta property="og:url"           content="<?php echo get_the_permalink(get_the_ID())?>" />
+         <meta property="og:title"         content="<?php echo get_the_title(get_the_ID())?>" />
+         <meta property="og:description"   content="<?php echo get_the_excerpt(get_the_ID())?>" />
+         <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID())?>" />
          <meta property="og:type"          content="website" />
-         <meta property="og:title"         content="<?php echo get_bloginfo( 'name' );?>" />
-         <meta property="og:description"   content="<?php the_excerpt()?>" />
-         <meta property="og:image"         content="<?php the_post_thumbnail_url()?>" />
 
         <?php
             wp_head();

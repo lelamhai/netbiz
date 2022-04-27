@@ -14,7 +14,7 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "10";
+    $version = "11";
     
     // ------------------- css ----------------- \\
     // style css
@@ -25,6 +25,7 @@ function agency_regsiter_styles()
 
     wp_enqueue_script('agency-jquery1.12.4.min', get_template_directory_uri() . "/assets/js/jquery1.12.4.min.js", array(), $version, true);
     wp_enqueue_script('agency-script', get_template_directory_uri() . "/assets/js/script.js", array(), $version, true);
+    wp_enqueue_script('agency-zalo', get_template_directory_uri() . "/assets/js/sdk.js", array(), $version, true);
     // <script type="text/javascript" src="./assets/js/jquery1.12.4.min.js"></script>
     // <script type="text/javascript" src="./assets/slick/slick.js?v=3"></script>
     // <script type="text/javascript" src="./assets/js/script.js"></script>

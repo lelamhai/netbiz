@@ -11,8 +11,16 @@ get_header();
                $args = array(
                   'post_type' => 'post',
                   'post_status' => 'publish',
-                  'category_name' => 'showbiz',
                   'posts_per_page' => 1,
+                  'meta_key'			=> 'priority',
+                  'orderby'			=> 'meta_value_num',
+                  'order'				=> 'ASC',
+                  'meta_query' => array(
+                     array(
+                         'key'   => 'top_stories',
+                         'value' => '1',
+                     )
+                 )
               );
                $the_query = new WP_Query( $args ); ?>
                
@@ -52,8 +60,44 @@ get_header();
             <div class="cat-content scroll pr5">
                <!-- 5 -->
                <?php
-                  do_shortcode('[show_top_stories]');
-               ?>
+                    $args = array(
+                     'post_type'       => 'post',
+                     'post_status'     => 'publish',
+                     'posts_per_page'  => 10,
+                     'offset'          => 1,
+                     'meta_key'			=> 'priority',
+                     'orderby'			=> 'meta_value_num',
+                     'order'				=> 'ASC',
+                     'meta_query'      => array(
+                        array(
+                            'key'   => 'top_stories',
+                            'value' => '1',
+                        )
+                    )
+                 );
+                  $the_query = new WP_Query( $args ); ?>
+                  
+                  <?php if ( $the_query->have_posts() ) : ?>
+                     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <article class="article">
+                           <a href="<?php the_permalink() ?>" title="<?php the_title();?>" class="article-thumb">
+                              <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" class="article-image">
+                           </a>
+                           <div class="article-info">
+                              <h3 class="article-title">
+                                 <a href="<?php the_permalink() ?>" title="<?php the_title();?>">
+                                    <?php the_title();?>                    
+                                 </a>
+                              </h3>
+                           </div>
+                        </article>
+                     <?php endwhile; ?>
+                     <?php wp_reset_postdata(); ?>
+                  <?php else : ?>
+                     <article class="article">
+                        Chưa có dữ liệu
+                     </article>
+                  <?php endif; ?>
             </div>
          </div>
       </div>

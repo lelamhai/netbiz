@@ -2549,4 +2549,24 @@ body {
 .item-random {
   display: none;
 }
+
+.post-share {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+}
+
+.fb {
+    background-color: rgb(37 116 250);
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.fb a:hover {
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */
