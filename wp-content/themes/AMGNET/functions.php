@@ -14,7 +14,7 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "13";
+    $version = "11";
     
     // ------------------- css ----------------- \\
     // style css
@@ -154,6 +154,30 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 
 // =========================================================== LOAD DATA ===================================================== \\
+function show_video_detail($attr)
+{
+    $menu_name = VIDEO_MENU;
+    if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        foreach ((array) $menu_items as $key => $menu_item) {
+            $id =  $menu_item->object_id;
+            $pieces = explode("/", $menu_item->url);
+            if($pieces[count($pieces)-1] == $attr["slug"])
+            {
+                ?>
+                    <li class="menu-item current-menu-item"><a href="<?php echo get_category_link($menu_item->object_id)?>"><?php echo $menu_item->title?></a></li>
+                <?php
+            } else {
+                ?>
+                    <li class="menu-item "><a href="<?php echo get_category_link($menu_item->object_id)?>"><?php echo $menu_item->title?></a></li>
+                <?php
+            }
+        }
+    }
+}
+add_shortcode('show_video_detail', 'show_video_detail');
+
 // AJAX
 function more_function() {
     $json = array();
@@ -312,3 +336,92 @@ function news_function() {
 }
 add_action('wp_ajax_news', 'news_function');
 add_action('wp_ajax_nopriv_news', 'news_function');
+
+
+function DetailVideo_function() {
+    $json = array();
+    if($_REQUEST["category"] && !empty($_REQUEST["category"]))
+    {
+        $args = array(
+            'post_type' => 'post',
+            'post_status'  => 'publish',
+            'category_name'  => $_REQUEST["category"],
+            'posts_per_page' => 10,
+            'paged' => $_REQUEST["paged"],
+        );
+        $the_query = new WP_Query( $args );
+        $total = $the_query ->post_count;
+        $json['html'] = $total;
+        if($total <= 10)
+        {
+            $json['isCount'] = true;
+        }
+        $get_category_link = "";
+        $cateName = "";
+        $html = "";
+        if ( $the_query->have_posts() ) : 
+            while ( $the_query->have_posts() ) : $the_query->the_post();
+            $categories = get_the_category(get_the_ID());
+            foreach( $categories as $category ) {
+                if($category ->category_parent != 0)
+                {
+                    $get_category_link = get_category_link($category->term_id);
+                    $cateName = $category->name;
+                }
+            }
+
+            if($_REQUEST["parent"] == "video")
+            {
+                $html = $html . '<article class="article">
+                                <a href="'.get_the_permalink().'" title="'.get_the_title().'" class="article-thumb">
+                                    <img src="'.get_the_post_thumbnail_url().'" alt="'.get_the_title().'" class="article-image">
+                                </a>
+                                <div class="article-info">
+                                    <h3 class="article-title">
+                                        <a href="'.get_the_permalink().'" title="'.get_the_title().'">
+                                            '.get_the_title().'
+                                        </a>
+                                    </h3>
+                                    <div class="article-meta">
+                                        <a href="'.$get_category_link.'" class="article-catname">
+                                            '.$cateName.'
+                                        </a>
+                                        <span class="post-publish-time">"'.get_the_date("d/m/Y").'"</span>
+                                    </div>
+                                </div>
+                            </article>';
+            } else {
+                $html = $html . '<article class="article">
+                                <a href="'.get_the_permalink().'" title="'.get_the_title().'" class="article-thumb">
+                                    <img src="'.get_the_post_thumbnail_url().'" alt="'.get_the_title().'" class="article-image">
+                                </a>
+                                <div class="article-info">
+                                    <h3 class="article-title">
+                                        <a href="'.get_the_permalink().'" title="'.get_the_title().'">
+                                            '.get_the_title().'
+                                        </a>
+                                    </h3>
+                                    <div class="article-meta">
+                                        <a href="'.$get_category_link.'" class="article-catname">
+                                            '.$cateName.'
+                                        </a>
+                                        <span class="post-publish-time">"'.get_the_date("d/m/Y").'"</span>
+                                    </div>
+                                </div>
+                            </article>';
+                            
+            }
+
+
+            
+                           
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        $json['html'] = $html;
+        wp_send_json_success( $json );
+    }
+    wp_die(); 
+}
+add_action('wp_ajax_DetailVideo', 'DetailVideo_function');
+add_action('wp_ajax_nopriv_DetailVideo', 'DetailVideo_function');

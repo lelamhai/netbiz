@@ -1,6 +1,6 @@
 <?php
 get_header();
-$categories=get_the_category(get_the_ID());
+$categories=get_the_category();
 $cateID = 0;
 $cateSlug = "";
 $cateName = "";
@@ -27,15 +27,14 @@ foreach($categories as $category) {
         }
     } 
 }
+
 ?>
-
-<input id="input-slug-parent" type="hidden" value="<?php echo $cateSlug ?>">
-
-
+    <input type="hidden" value="<?php echo $category->slug?>" id="parent">
 <?php
+
 get_footer();
 $count = (int) get_field('views');
 $count++;
 update_field('views', $count);
 ?>
-<script type="text/javascript" src="<?php echo get_template_directory_uri()."/assets/js/detail.js"?>"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri()."/assets/js/detail.js?v=3"?>"></script>

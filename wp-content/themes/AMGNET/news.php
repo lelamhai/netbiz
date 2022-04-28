@@ -1,4 +1,4 @@
-<input type="text" value="14" id="offset">
+<input type="hidden" value="14" id="offset">
 <div class="webpage pc-list">
    <div class="wrapper breadcrumb mt40 pb20">
       <div class="cat-title text-center">

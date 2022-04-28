@@ -1,3 +1,15 @@
+<?php
+     $categories=get_the_category();
+     $term = "";
+     foreach($categories as $category) {
+         if($category->category_parent != 0)
+         {
+             $term = $category;
+         }
+     }
+?>
+<input id="input-slug" type="hidden" value="<?php echo $term->slug ?>">
+
 <div class="webpage pc-video">
     <div class="wrapper breadcrumb mt40 pb20">
         <div class="cat-title text-center">
@@ -101,20 +113,19 @@
                     <h2 class="play-list-title">Danh sách phát</h2>
                     <ul class="cat-list scroll-grey">
                         <?php
-                            do_shortcode('[show_video_menu]');
+                            do_shortcode('[show_video_detail slug="'.$term->slug.'"]');
                         ?>
                     </ul>
                 </div>
             </div>
             <div class="w795 rt">
                 <!-- 23 -->
-
                         <?php 
                         $count_post = 10;
                         $args = array(
                             'post_type' => 'post',
                             'post_status' => 'publish',
-                            'category__in' => $category->term_id,  
+                            'category_name' =>  $term->slug,  
                             'posts_per_page' => 10,
                         );
                         $the_query = new WP_Query( $args ); 

@@ -1,3 +1,13 @@
+<?php
+     $term = "";
+     foreach($categories as $category) {
+         if($category->category_parent != 0)
+         {
+             $term = $category;
+         }
+     }
+?>
+<input id="input-slug" type="hidden" value="<?php echo $term->slug ?>">
 <div class="wrapper breadcrumb mt40 pb20">
   <div class="cat-title text-center">
         <div class="cat-name mb20">
@@ -117,7 +127,7 @@
                 $args = array(
                     'post_type' => 'post',
                     'post_status'  => 'publish',
-                    'category__in' => $cateID,  
+                    'category_name' =>  $term->slug, 
                     'posts_per_page' => 10,
 
                 );  
@@ -158,7 +168,7 @@
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>
                     <?php
-                        if($total > $count_post)
+                        if($total >= $count_post)
                         {
                             ?>
                                 <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
