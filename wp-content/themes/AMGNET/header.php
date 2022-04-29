@@ -40,10 +40,52 @@
                   </div>
                </div>
             </div>
+
+            <div class="d-flex wrapper btn-group mobile">
+               <div class="">
+                  <a href="https://netbiz.net.vn/xem-nhieu" class="btn-grey">Xem nhiều</a>
+                  <a href="https://netbiz.net.vn/moi-nhat" class="btn-grey">Mới nhất</a>
+                  <!-- <a href="" class="btn-subscribe">Subscribe</a> -->
+               </div>
+               <div class="">
+                  <div class="btn-search search-button"></div>
+                  <div class="btn-menu menu-button"></div>
+               </div>
+            </div>
          </header>
-         <nav class="navbar mb15">
+         <div id="shortcut" class="navigation_scroll wrapper mobile">
+            <a href="https://netbiz.net.vn/" class="icon-home"></a>
+            <div id="list-featured" class="list-shortcut">
+               <a href="https://netbiz.net.vn/showbiz" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Showbiz</a>
+               <a href="https://netbiz.net.vn/gia-dinh" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Gia đình</a>
+               <a href="https://netbiz.net.vn/come-out" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Come Out</a>
+               <a href="https://netbiz.net.vn/giai-tri" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Giải trí</a>
+               <a href="https://netbiz.net.vn/xe" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Xe</a>
+               <a href="https://netbiz.net.vn/cong-nghe" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Công nghệ</a>
+               <a href="https://netbiz.net.vn/tai-chinh" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Tài chính</a>
+               <a href="https://netbiz.net.vn/the-thao" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Thể thao</a>
+               <a href="https://netbiz.net.vn/e-magazine" class="" style="padding-left: 8.75px; padding-right: 8.75px;">E-Magazine</a>
+               <a href="https://netbiz.net.vn/videos" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Videos</a>
+               <a href="https://netbiz.net.vn/live" style="padding-left: 8.75px; padding-right: 8.75px;">Live</a>
+            </div>
+            <!-- <form id="mobile-frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch">
+               <input type="text" placeholder="" onkeypress="return enter_search_q(event);" name="q" value="">
+               <button type="submit" name="submit" value="" onclick="return submit_search_q();">Tìm kiếm</button>
+            </form> -->
+         </div>
+         <nav class="navbar mb15 menu-list">
+            <div class="menu-header">
+               <span class="btn icon-close menu-button rt"></span>
+               <div class="logo-bar logo-mobile wrapper mobile">
+                  <div class="logo"><a href="https://netbiz.net.vn/" title="NetBiz">
+                     <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="NetBiz">
+                     </a>
+                  </div>
+               </div>
+            </div>
             <ul class="navbar-nav wrapper">
-               <li class="menu-item"><a href="<?php echo get_home_url(); ?>" class="nav-link-home"></a></li>
+               <li class="menu-item pc"><a href="<?php echo get_home_url(); ?>" class="nav-link-home"></a></li>
+               <li class="menu-item first"><a href="<?php echo get_home_url()?>">Trang Chủ</a></li>
                <?php
                   do_shortcode('[main_menu]');
                ?>
