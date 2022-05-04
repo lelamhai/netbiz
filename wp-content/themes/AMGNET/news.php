@@ -179,7 +179,7 @@
                                 </div>
                             </div>
                             <?php
-                                if($total > $count_post)
+                                if($total >= $count_post)
                                 {
                                     ?>
                                         <span id="btnViewmore" class="btn-viewmore">XEM THÊM</span>
@@ -195,7 +195,7 @@
              
             
          </div>
-         <div class="w380 rt">
+         <div class="w380 rt pc">
             <!-- 22 -->
             <div class="cat-listing cat-most-read-detail article-bdb-25 thumb-w175 no-desc no-meta mb40">
                <div class="cat-title mb30">

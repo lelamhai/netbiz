@@ -240,7 +240,6 @@ get_header();
       </div>
    </div>
 
-
    <div class="wrapper clearfix mb50">
       <div class="w760 lt">
          <div class="cat-listing title-2228 no-publish-time article-bdb-30 thumb-w240">
@@ -392,7 +391,6 @@ get_header();
          </div> 
       </div>
    </div>
-
 
    <div class="cat-emagazine bg-grey-f8 no-meta mb30 clearfix">
       <div class="wrapper cat-emagazine-inner">
@@ -554,7 +552,6 @@ get_header();
          </div>
       </div>
    </div>
-
     
    <div class="wrapper clearfix mb40">
       <div class="w760 lt">
@@ -729,7 +726,6 @@ get_header();
       </div>
    </div>
 
-
    <div class="wrapper">
       <div class="cat-grid-3-first-big no-publish-time clearfix mb35">
          <div class="cat-title cat-title-common mb25">
@@ -748,7 +744,7 @@ get_header();
                      
                      <?php if ( $the_query->have_posts() ) : ?>
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                        <article class="article">
+                        <article class="article article-common">
                            <a href="<?php the_permalink() ?>" title="<?php the_title()?>" title="<?php the_title()?>" class="article-thumb">
                            <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>" class="article-image">
                            </a>
@@ -772,7 +768,6 @@ get_header();
       </div>
    </div>
 
-
    <div class="wrapper clearfix mb40">
       <div class="w760 lt">
          <div class="cat-grid-3 no-desc no-meta mb35 clearfix">
@@ -792,7 +787,7 @@ get_header();
                      
                      <?php if ( $the_query->have_posts() ) : ?>
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                        <article class="article">
+                        <article class="article article-common">
                            <a href="<?php the_permalink() ?>" title="<?php the_title()?>" class="article-thumb">
                            <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>" class="article-image">
                            </a>
@@ -830,7 +825,7 @@ get_header();
                      
                      <?php if ( $the_query->have_posts() ) : ?>
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                        <article class="article">
+                        <article class="article article-common">
                            <a href="<?php the_permalink() ?>" title="<?php the_title()?>" class="article-thumb">
                            <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>" class="article-image">
                            </a>
@@ -868,7 +863,7 @@ get_header();
                      
                      <?php if ( $the_query->have_posts() ) : ?>
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                        <article class="article">
+                        <article class="article article-common">
                            <a href="<?php the_permalink() ?>" title="<?php the_title()?>" class="article-thumb">
                            <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>" class="article-image">
                            </a>
@@ -892,7 +887,6 @@ get_header();
          </div>
       </div>
    </div>
-
   
 </main>
 <?php

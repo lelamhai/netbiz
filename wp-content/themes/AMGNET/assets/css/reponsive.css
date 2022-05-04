@@ -15,7 +15,6 @@
         display: block;
     }
     
-    scroll
     .pc {
         display:none;
     }
@@ -563,6 +562,21 @@
         width: 100%;
         height: auto;
         position: unset;
+    }
+
+    .article-common {
+        margin-bottom: 20px;
+    }
+
+    /* category */
+    .w720 {
+        width: 100%;
+    }
+
+    .cat-cover .article {
+        padding-bottom: 25px !important;
+        margin-bottom: 25px !important;
+        border-bottom: 1px solid #e1e1e1 !important;
     }
 
 }
