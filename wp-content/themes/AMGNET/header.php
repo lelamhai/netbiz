@@ -70,7 +70,7 @@
             </div>
             
          </div>
-         <form id="mobile-frmSearch" class="" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
+         <form id="mobile-frmSearch" class="mobile" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
             <input type="text" placeholder="" name="s" value="" class="search-input-mobile" >
             <button type="submit" name="submit" value="" >Tìm kiếm</button>
          </form>

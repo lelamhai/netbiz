@@ -15,6 +15,7 @@
         display: block;
     }
     
+    scroll
     .pc {
         display:none;
     }
@@ -311,6 +312,10 @@
 
 
     /* footer */
+    .footer-right {
+        display: none;
+    }
+
     .footer .footer-left {
         width: 100%;
         padding: 0 17px;
@@ -319,4 +324,245 @@
     .footer-bottom {
         padding: 0 17px;
     }
+
+    .mastercms {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    /* Home */
+    .w800 {
+        width: 100% !important;
+    } 
+
+    .article {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .article-title a {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .cat-listing .article-thumb {
+        width: 100%;
+    }
+
+    .cat-title .cat-name-top-stories{
+        display: none;
+    }
+
+    .w300 {
+        width: 100%;
+    }
+
+    .cat-top-stories .cat-content {
+        overflow: unset;
+        height: unset;
+    }
+
+    .cat-listing .article-info {
+        overflow:unset;
+    }
+
+    .cat-top-stories .article:nth-child(-n+2) .article-title {
+        display: block;
+        overflow: unset;
+    }
+
+    .article-desc {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .scroll .mobile {
+        display: block !important;
+    }
+
+    /* banner */
+    .banner-item {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    /* video */
+    .section-video {
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-bottom: 0 !important;
+    }
+
+    .w760 {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .cat-video-left .article {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .w340 {
+        width: 100%;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .w340 .cat-content .article { 
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .w340 .cat-content .article .article-title {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .cat-video-right .cat-title-grey{
+        display: none;
+    }
+
+    .cat-video-right .cat-content {
+        background-color: transparent;
+    }
+
+    .cat-video-right .article {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cat-video-right .article-meta {
+        width: 100%;
+    }
+
+    /* azine */
+    .c-pink {
+        font-size: 48px;
+    }
+
+    .c-white {
+        font-size: 48px;
+    }
+
+    .cat-emagazine-inner .cat-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cat-emagazine-inner .cat-content .article {
+        position: relative;
+    }
+
+    .cat-emagazine .article:first-child {
+        width: 100%;
+    }
+
+    .cat-emagazine .article:nth-child(2) {
+        width: 100%;
+    }
+
+    .cat-emagazine-inner {
+        padding: 0 20px 30px 35px;
+    }
+
+    .cat-emagazine-title {
+        padding-top: 0;
+        background: url("../../assets/imgs/emga-title-bg.png") -40px bottom no-repeat;
+    }
+
+    .cat-emagazine .article .article-title {
+        font-size: 22px;
+        line-height: 27px;
+        color: #fff;
+    }
+
+    .cat-emagazine-background {
+        height: 590px;
+    }
+
+    .cat-emagazine .article .article-desc {
+        color: #111;
+    }
+
+    .cat-emagazine-background::after {
+        bottom: -5px;
+    }
+
+    .slick-dots {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slick-dots li {
+        display: inline-block;
+      }
+      
+      .slick-dots li button {
+        background-color: #e1e1e1;
+        width: 7px;
+        height: 7px;
+        margin: 2.5px;
+        border-radius: 50%;
+        padding: 0;
+        font-size: 0;
+      }
+      
+      .slick-dots .slick-active button {
+        background-color: var(--color-primary);
+      }
+      
+      .slick-dots li button::before {
+        content: none;
+      }
+
+    /* showbiz */
+    .cat-title-common .cat-name {
+        margin-left: 17px;
+    }
+
+    .showbiz .article {
+        margin-bottom: 20px;
+    }
+
+    .cat-grid-3-first-big .article:first-child {
+        width: 100%;
+    }
+
+    .cat-grid-3-first-big .article:not(:first-child) {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Gia Dinh */ 
+    .cat-grid-3 .article:nth-child(-n + 3) {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .cat-entertainment .cat-content .article:first-child .article-thumb {
+        width: 100%;
+        height: auto;
+        position: unset;
+    }
+
+    .cat-entertainment .cat-content .article a::before {
+        display: unset;
+    }
+
+    .cat-entertainment .cat-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .cat-entertainment .cat-content  .article img {
+        width: 100%;
+        height: auto;
+        position: unset;
+    }
+
 }

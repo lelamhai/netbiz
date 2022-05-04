@@ -48,7 +48,7 @@
             </div>
          </div>
       </footer>
-      <!-- <a href="https://mastercms.org/" class="mastercms wrapper" target="_blank" rel="nofollow">Based on MasterCMS Ultimate Edition v2.9 2021</a> -->
+      <a href="https://mastercms.org/" class="mastercms wrapper" target="_blank" rel="nofollow">Based on MasterCMS Ultimate Edition v2.9 2021</a>
       </div>   
    </body>
    <?php
@@ -56,6 +56,17 @@
    ?>
    <script>
       $(document).ready(function(){
+         var is_mobile = false;
+         if( $('.mobile').css('display')!='none') {
+            is_mobile = true;       
+         }
+
+         if (is_mobile == true) {
+            $('#emagazine').addClass('js-slide');
+         }
+
+
+
          $('#frmSearch').submit(function () {
          var name = $.trim($('.search-input ').val());
             if (name  === '') {
@@ -84,6 +95,23 @@
                $("#mobile-frmSearch").addClass("show-search-mobile");
             }
          });
+
+         // cháº¡y slide box emagazine
+         $('.js-slide').slick({
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+         })
+         
+         //list down subcategory cá»§a cĂ¡c box trang chá»§
+         $('.js-list-down-btn').on('click',function() {
+            $(this).toggleClass('active');
+            $(this).next().slideToggle();
+         })
       });
    </script>
 </html>
