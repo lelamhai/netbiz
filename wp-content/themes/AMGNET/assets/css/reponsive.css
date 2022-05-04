@@ -272,8 +272,41 @@
         color:#f20078;
     }
 
+    /* search */
     #mobile-frmSearch {
+        display: none;
+        padding: 10px;
+        background-color: #f7f7f7;
+        z-index: 10;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    }
 
+    #mobile-frmSearch input {
+        width: calc(100% - 70px);
+        background: #fff;
+        height: 34px;
+        padding: 0px 5px;
+    }
+
+    #mobile-frmSearch button {
+        color: #fff;
+        border: none;
+        border-left-color: #eee;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        float: right;
+        width: 70px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        background: #999;
+    }
+
+    .show-search-mobile {
+        display: block !important;
     }
 
 

@@ -33,8 +33,8 @@
                         <a href="https://www.youtube.com/channel/UCQHJtnMKQMSk-zMrTmBPzRg" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-youtube"></i></a>
                         <a href="https://vt.tiktok.com/ZSeCFXFyA/" target="_blank" rel="nofollow" class="link-item"><i class="fab fa-tiktok"></i></a>
                      </div>
-                     <form id="frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
-                        <input class="search-input " type="text" placeholder="" onkeypress="" name="s" value="">
+                     <form id="frmSearch" class="" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
+                        <input class="search-input" type="text" placeholder="" onkeypress="" name="s" value="">
                         <button class="btn search-btn" value="" onclick=""></button>
                      </form>
                   </div>
@@ -68,11 +68,12 @@
                <a href="https://netbiz.net.vn/videos" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Videos</a>
                <a href="https://netbiz.net.vn/live" style="padding-left: 8.75px; padding-right: 8.75px;">Live</a>
             </div>
-            <!-- <form id="mobile-frmSearch" class="https://netbiz.net.vn/search_enginer.html?p=tim-kiem" name="frmSearch">
-               <input type="text" placeholder="" onkeypress="return enter_search_q(event);" name="q" value="">
-               <button type="submit" name="submit" value="" onclick="return submit_search_q();">Tìm kiếm</button>
-            </form> -->
+            
          </div>
+         <form id="mobile-frmSearch" class="" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
+            <input type="text" placeholder="" name="s" value="" class="search-input-mobile" >
+            <button type="submit" name="submit" value="" >Tìm kiếm</button>
+         </form>
          <nav class="navbar mb15 menu-list">
             <div class="menu-header">
                <span class="btn icon-close menu-button rt"></span>

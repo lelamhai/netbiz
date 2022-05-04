@@ -56,8 +56,16 @@
    ?>
    <script>
       $(document).ready(function(){
-         $('form').submit(function () {
+         $('#frmSearch').submit(function () {
          var name = $.trim($('.search-input ').val());
+            if (name  === '') {
+               alert('Mời bạn nhập');
+               return false;
+            }
+         });
+
+         $('#mobile-frmSearch').submit(function () {
+         var name = $.trim($('.search-input-mobile').val());
             if (name  === '') {
                alert('Mời bạn nhập');
                return false;
@@ -66,7 +74,16 @@
 
          $('.menu-button').click(function(){
             $('.menu-list').toggleClass('show_main_menu');
-         })
+         });
+
+         $('.btn-search').click(function(){ 
+            if($( "#mobile-frmSearch" ).hasClass("show-search-mobile"))
+            {
+               $("#mobile-frmSearch").removeClass("show-search-mobile");
+            } else {
+               $("#mobile-frmSearch").addClass("show-search-mobile");
+            }
+         });
       });
    </script>
 </html>

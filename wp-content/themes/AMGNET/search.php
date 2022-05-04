@@ -85,7 +85,7 @@ if($_GET['s'] && !empty($_GET['s']))
                             ?>
                         <?php else : ?>
                             <article class="article">
-                                Chưa có dữ liệu
+                                Không tìm thấy dữ liệu liên quan <?php echo $key?>
                             </article>
                     <?php endif; ?>
             
