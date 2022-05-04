@@ -116,7 +116,7 @@
          </div>
          
          <div class="cat-listing title-2228 no-desc no-publish-time article-bdb-30 thumb-w240 mb40">
-            <div class="cat-title mb25">
+            <div class="cat-title cat-title-common mb25">
                <h2 class="cat-name fs-25">Tin bài khác</h2>
             </div>
             <div class="cat-content __MB_LIST_ITEM" id="h-loadmore">
@@ -186,7 +186,7 @@
       <div class="w380 rt">
          <!-- 22 -->
          <div class="cat-listing article-bdb-25 thumb-w175 no-desc no-meta mb40">
-            <div class="cat-title mb30">
+            <div class="cat-title cat-title-common mb30">
                <h2 class="cat-name fs-25"><span>Đọc nhiều</span></h2>
             </div>
             <div class="cat-content">
@@ -229,7 +229,7 @@
          </div>
          <!-- 50 -->
          <div class="cat-listing article-bdb-25 thumb-w175 no-desc no-meta mb40">
-            <div class="cat-title mb30">
+            <div class="cat-title cat-title-common mb30">
                <h2 class="cat-name fs-25"><span>Mới nhất</span></h2>
             </div>
             <div class="cat-content">
