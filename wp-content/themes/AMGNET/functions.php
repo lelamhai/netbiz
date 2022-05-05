@@ -14,7 +14,7 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "48";
+    $version = "50";
     
     // ------------------- css ----------------- \\
     // style css
@@ -182,6 +182,31 @@ function show_video_detail($attr)
     }
 }
 add_shortcode('show_video_detail', 'show_video_detail');
+
+
+
+function show_menu_mobile()
+{
+    $menu_name = MAIN_MENU;
+    if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        foreach ((array) $menu_items as $key => $menu_item) {
+            // var_dump($menu_item);echo "<br><br>";
+            if(intval($menu_item->menu_item_parent) == 0)
+            {
+                ?>
+                    <a href="<?php echo $menu_item->url?>" class="" style="padding-left: 8.75px; padding-right: 8.75px;"><?php echo $menu_item->title?></a>
+                <?php
+            }
+            
+        }
+    }
+}
+add_shortcode('show_menu_mobile', 'show_menu_mobile');
+
+
+
 
 // AJAX
 function more_function() {

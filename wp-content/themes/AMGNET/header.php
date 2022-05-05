@@ -17,13 +17,14 @@
    </head>
    <body>
       <input type="hidden" id="url-home" value="<?php echo get_home_url()?>">
+
       <div class="webpage pc-home">
          <header class="header">
             <div class="wrapper">
                <div class="logo-bar">
                   <div class="logo-bar-left">
-                     <h1 class="logo"><a href="<?php echo get_home_url()?>" title="NetBiz">
-                           <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="NetBiz" />
+                     <h1 class="logo"><a href="<?php echo get_home_url()?>" title="<?php echo get_bloginfo( 'name' );?>">
+                           <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="<?php echo get_bloginfo( 'name' );?>" />
                         </a>
                      </h1>
                   </div>
@@ -45,7 +46,6 @@
                <div class="">
                   <a href="<?php echo  get_home_url()?>/xem-nhieu" class="btn-grey">Xem nhiều</a>
                   <a href="<?php echo  get_home_url()?>/moi-nhat" class="btn-grey">Mới nhất</a>
-                  <!-- <a href="" class="btn-subscribe">Subscribe</a> -->
                </div>
                <div class="">
                   <div class="btn-search search-button"></div>
@@ -56,19 +56,10 @@
          <div id="shortcut" class="navigation_scroll wrapper mobile">
             <a href="https://netbiz.net.vn/" class="icon-home"></a>
             <div id="list-featured" class="list-shortcut">
-               <a href="https://netbiz.net.vn/showbiz" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Showbiz</a>
-               <a href="https://netbiz.net.vn/gia-dinh" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Gia đình</a>
-               <a href="https://netbiz.net.vn/come-out" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Come Out</a>
-               <a href="https://netbiz.net.vn/giai-tri" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Giải trí</a>
-               <a href="https://netbiz.net.vn/xe" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Xe</a>
-               <a href="https://netbiz.net.vn/cong-nghe" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Công nghệ</a>
-               <a href="https://netbiz.net.vn/tai-chinh" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Tài chính</a>
-               <a href="https://netbiz.net.vn/the-thao" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Thể thao</a>
-               <a href="https://netbiz.net.vn/e-magazine" class="" style="padding-left: 8.75px; padding-right: 8.75px;">E-Magazine</a>
-               <a href="https://netbiz.net.vn/videos" class="" style="padding-left: 8.75px; padding-right: 8.75px;">Videos</a>
-               <a href="https://netbiz.net.vn/live" style="padding-left: 8.75px; padding-right: 8.75px;">Live</a>
+               <?php
+                  do_shortcode('[show_menu_mobile]');
+               ?>
             </div>
-            
          </div>
          <form id="mobile-frmSearch" class="mobile" name="frmSearch" action="<?php echo get_home_url(); ?>/search">
             <input type="text" placeholder="" name="s" value="" class="search-input-mobile" >

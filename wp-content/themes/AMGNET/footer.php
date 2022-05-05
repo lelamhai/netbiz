@@ -2,8 +2,8 @@
          <div class="wrapper">
             <div class="footer-top clearfix hr">
                <div class="footer-left lt">
-                  <a class="footer-logo" href="<?php echo get_home_url()?>" title="NetBiz">
-                     <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="NetBiz" />
+                  <a class="footer-logo" href="<?php echo get_home_url()?>" title="<?php echo get_bloginfo( 'name' );?>">
+                     <img src="<?php echo get_template_directory_uri()."/assets/imgs/logo.png"?>" alt="<?php echo get_bloginfo( 'name' );?>" />
                   </a>
                   <p>Công ty Cổ phần Tập Đoàn MCV</p>
                   <p>Địa chỉ: 18bis/22/11 Nguyễn Thị Minh Khai, phường Đa Kao, quận 1, Thành phố Hồ Chí Minh.</p>
