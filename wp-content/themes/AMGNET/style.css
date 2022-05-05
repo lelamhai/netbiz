@@ -2549,14 +2549,11 @@ body {
   display: none;
 }
 
-
-
-
 .post-share {
     display: flex;
     justify-content: flex-start;
     align-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .fb {
@@ -2595,6 +2592,12 @@ body {
 .post .alignright figcaption {
   color: #999;
   margin-bottom: 0;
+}
+
+
+.social-network {
+  display: flex;
+  align-items: flex-start;
 }
 
 /* .show_main_menu {

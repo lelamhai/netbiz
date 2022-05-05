@@ -585,4 +585,32 @@
         padding-right: 17px;
     }
 
+    /* video */
+    .video-title-common {
+        font-size: 20px;
+        line-height: 25px;
+        color: #333;
+    }
+
+    .w795 {
+        width: 100%;
+    }
+
+    .article-author {
+        margin-right:0;
+    }
+
+    .video-detail {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .video-detail .wrapper {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .video-detail .wrapper .mobile {
+        padding-left: 0;
+    }
 }

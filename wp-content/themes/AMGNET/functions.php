@@ -14,7 +14,7 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "43";
+    $version = "48";
     
     // ------------------- css ----------------- \\
     // style css
@@ -244,6 +244,73 @@ function more_function() {
 }
 add_action('wp_ajax_more', 'more_function');
 add_action('wp_ajax_nopriv_more', 'more_function');
+
+
+function watch_function() {
+    $json = array();
+    if($_REQUEST["paged"] && !empty($_REQUEST["paged"]))
+    {
+        $args = array(
+            'post_type'         => 'post',
+            'post_status'       => 'publish',
+            'posts_per_page'    => 10,
+            'meta_key'	        => 'views',
+            'orderby'			=> 'meta_value_num',
+            'order'				=> 'DESC',
+            'paged'             => $_REQUEST["paged"],
+           
+        );
+        $the_query = new WP_Query( $args );
+        $total = $the_query ->post_count;
+
+        if($total <= 10)
+        {
+            $json['isCount'] = true;
+        }
+        $get_category_link = "";
+        $cateName = "";
+        $html = "";
+        if ( $the_query->have_posts() ) : 
+            while ( $the_query->have_posts() ) : $the_query->the_post();
+            $categories = get_the_category(get_the_ID());
+            foreach( $categories as $category ) {
+                if($category ->category_parent != 0)
+                {
+                    $get_category_link = get_category_link($category->term_id);
+                    $cateName = $category->name;
+                }
+            }
+            $html = $html . '<article class="article">
+                                <a href="'.get_the_permalink().'" title="'.get_the_title().'" class="article-thumb">
+                                    <img src="'.get_the_post_thumbnail_url().'" alt="'.get_the_title().'" class="article-image">
+                                </a>
+                                <div class="article-info">
+                                    <h3 class="article-title">
+                                        <a href="'.get_the_permalink().'" title="'.get_the_title().'">
+                                            '.get_the_title().'
+                                        </a>
+                                    </h3>
+                                    <div class="article-meta">
+                                        <a href="'.$get_category_link.'" class="article-catname">
+                                            '.$cateName.'
+                                        </a>
+                                        <span class="post-publish-time">"'.get_the_date("d/m/Y").'"</span>
+                                    </div>
+                                </div>
+                            </article>';
+                           
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        $json['html'] = $html;
+        wp_send_json_success( $json );
+    }
+    wp_die(); 
+}
+add_action('wp_ajax_watch', 'watch_function');
+add_action('wp_ajax_nopriv_watch', 'watch_function');
+
+
 
 
 

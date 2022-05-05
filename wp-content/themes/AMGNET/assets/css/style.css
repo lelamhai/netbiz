@@ -2513,4 +2513,9 @@ body {
 .item-random {
   display: none;
 }
+
+.social-network {
+  display: flex;
+  align-items: flex-start;
+}
 /*# sourceMappingURL=style.css.map */

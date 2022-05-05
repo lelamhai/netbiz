@@ -61,18 +61,50 @@
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="video-title"><?php the_title()?></h1>
-                            <div class="video-meta mb20">
+                            <h1 class="video-title video-title-common"><?php the_title()?></h1>
+                            <div class="video-meta mb20 pc">
                                 <span class="view-count"><span class="c-pink"><?php echo get_field("views")?></span> lượt xem</span>
                                 <span class="video-publish-time">| <?php echo get_the_date("d/m/Y H:i") ?></span>
                             </div>
+                            
+                            <div class="article-meta mobile">
+                                                <span class="article-author">
+                                                <?php
+                                                    $author = get_field("author");
+                                                    if($author)
+                                                    {
+                                                        ?>
+                                                            <span class="js-video-author-name"><?php echo get_field("author")?></span>
+                                                        <?php
+                                                    }
+                                                ?>
+                                                </span>
+                                                <span class="article-publish-time no-before"><?php echo get_the_date("d/m/Y H:i") ?></span>
+                                                    <?php 
+                                                        $categories = get_the_category(get_the_ID());
+                                                        foreach( $categories as $category ) {
+                                                            if($category ->category_parent != 0)
+                                                            {
+                                                                ?>
+                                                                    <a href="<?php echo get_category_link($category->term_id)?>" class="article-catname mr5">
+                                                                        <?php echo $category->name?>
+                                                                    </a>
+                                                                <?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                <span class="icon-view hide-empty"><?php echo get_field("views")?> lượt xem</span>
+                                </div>
+
+
+
                             <div class="video-desc"><?php the_content()?></div>
                             <?php
                                 $author = get_field("author");
                                 if($author)
                                 {
                                     ?>
-                                        <div class="video-author mt10">Thực hiện <?php echo get_field("author")?></div>
+                                        <div class="video-author mt10 pc">Thực hiện <?php echo get_field("author")?></div>
                                     <?php
                                 }
                             ?>
@@ -82,7 +114,7 @@
                                 if($source)
                                 {
                                     ?>
-                                        <div class="video-source mt10">Nguồn <?php echo get_field("source")?></div>
+                                        <div class="video-source mt10 pc">Nguồn <?php echo get_field("source")?></div>
 
                                     <?php
                                 }
@@ -97,7 +129,7 @@
             </div>
         </div>
         <div class="wrapper clearfix">
-            <div class="w310 lt">
+            <div class="w310 lt pc">
                 <div class="play-list mb20">
                     <h2 class="play-list-title">Danh sách phát</h2>
                     <ul class="cat-list scroll-grey">

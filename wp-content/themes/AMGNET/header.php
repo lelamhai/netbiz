@@ -43,8 +43,8 @@
 
             <div class="d-flex wrapper btn-group mobile">
                <div class="">
-                  <a href="https://netbiz.net.vn/xem-nhieu" class="btn-grey">Xem nhiều</a>
-                  <a href="https://netbiz.net.vn/moi-nhat" class="btn-grey">Mới nhất</a>
+                  <a href="<?php echo  get_home_url()?>/xem-nhieu" class="btn-grey">Xem nhiều</a>
+                  <a href="<?php echo  get_home_url()?>/moi-nhat" class="btn-grey">Mới nhất</a>
                   <!-- <a href="" class="btn-subscribe">Subscribe</a> -->
                </div>
                <div class="">
