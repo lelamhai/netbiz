@@ -168,7 +168,7 @@ function show_video_detail($attr)
         foreach ((array) $menu_items as $key => $menu_item) {
             $id =  $menu_item->object_id;
             $pieces = explode("/", $menu_item->url);
-            if($pieces[count($pieces)-1] == $attr["slug"])
+            if($pieces[count($pieces)-2] == $attr["slug"])
             {
                 ?>
                     <li class="menu-item current-menu-item"><a href="<?php echo get_category_link($menu_item->object_id)?>"><?php echo $menu_item->title?></a></li>

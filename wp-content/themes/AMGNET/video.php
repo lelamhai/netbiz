@@ -30,7 +30,7 @@
                     $args = array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        'category__in' => $category->term_id,  
+                        'cat' => $category->term_id,  
                         'posts_per_page' => 1,
                     );
                     $the_query = new WP_Query( $args ); ?>
@@ -82,12 +82,12 @@
                                                 <span class="article-publish-time no-before"><?php echo get_the_date("d/m/Y H:i") ?></span>
                                                     <?php 
                                                         $categories = get_the_category(get_the_ID());
-                                                        foreach( $categories as $category ) {
-                                                            if($category ->category_parent != 0)
+                                                        foreach( $categories as $categorys ) {
+                                                            if($categorys ->category_parent != 0)
                                                             {
                                                                 ?>
-                                                                    <a href="<?php echo get_category_link($category->term_id)?>" class="article-catname mr5">
-                                                                        <?php echo $category->name?>
+                                                                    <a href="<?php echo get_category_link($categorys->term_id)?>" class="article-catname mr5">
+                                                                        <?php echo $categorys->name?>
                                                                     </a>
                                                                 <?php
                                                             }
@@ -145,11 +145,11 @@
                         <?php 
                         $count_post = 10;
                         $args = array(
-                            'post_type' => 'post',
-                            'post_status' => 'publish',
-                            'category__in' => $category->term_id,  
-                            'posts_per_page' => 10,
-                            'offset'         => 1
+                            'post_type'     => 'post',
+                            'post_status'   => 'publish',
+                            'cat'           => $category->term_id,
+                            'posts_per_page'=> 10,
+                            'offset'        => 1,
                         );
                         $the_query = new WP_Query( $args ); 
                         $total = $the_query->post_count;
