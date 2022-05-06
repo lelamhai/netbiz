@@ -45,6 +45,17 @@
             </div>
             <div class="footer-bottom">
                <p>© Bản quyền thuộc về Báo Tin tức - NetBiz. Cấm sao chép dưới mọi hình thức nếu không có sự chấp thuận bằng văn bản</p>
+               <div class="social-link clearfix mt20 mobile">
+                  <a href="https://www.facebook.com/MCV.NetbizEntertainment" class="social-link-item" target="_blank" rel="nofollow">
+                     <img src="<?php echo get_template_directory_uri()."/assets/imgs/icon_facebook.png"?>" alt="">
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCQHJtnMKQMSk-zMrTmBPzRg" class="social-link-item" target="_blank" rel="nofollow">
+                     <img src="<?php echo get_template_directory_uri()."/assets/imgs/icon_youtube.png"?>" alt="">
+                  </a>
+                  <a href="https://vt.tiktok.com/ZSeCFXFyA/" class="social-link-item" target="_blank" rel="nofollow">
+                     <img src="<?php echo get_template_directory_uri()."/assets/imgs/icon_tiktok.png"?>" alt="">
+                  </a>
+               </div>
             </div>
          </div>
       </footer>
@@ -54,6 +65,24 @@
    <?php
       wp_footer();
    ?>
+   <script>
+      window.fbAsyncInit = function() {
+         FB.init({
+            appId      : '1024547571496706',
+            xfbml      : true,
+            version    : 'v13.0'
+         });
+         FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+   </script>
    <script>
       $(document).ready(function(){
          var is_mobile = false;
@@ -113,5 +142,38 @@
             $(this).next().slideToggle();
          })
       });
+
+
+      $(".cancel-popup").click(function() {
+         $(".fancybox-overlay").css("display","none");
+      });
+
+      $("#submit").click(function() {
+         var comment = $.trim($('#comment').val());
+         var email = $.trim($('#email').val());
+         var author = $.trim($('#author').val());
+         if(comment === '' || email === '' || author === '')
+         {
+            alert("Những trường có dấu * bắt buộc phải nhập");
+            return false;
+         }
+      });
+
+      $(".button-comment").click(function() { 
+         var comment = $.trim($('.__comment').val());
+         if(comment.length < 20 )
+         {
+            $(".errors").css("display","block");
+            return false;
+         } else {
+            $(".fancybox-overlay").css("display","block");
+            $('#comment').val($('.__comment').val());
+         }
+      });
+      
+
+
    </script>
+
+   
 </html>

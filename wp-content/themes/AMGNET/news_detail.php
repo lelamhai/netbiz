@@ -38,8 +38,16 @@
             <h1 class="post-title"><?php the_title()?></h1>
         
             <div class="post-share mb15">
-                <span class="fb"><a name="fb_share" target="_blank" type="button" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()) ?>&t=<?php echo get_the_permalink()?>">Chia sẻ</a></span>
-                <span><div class="zalo-share-button" data-href="" data-oaid="2548026458213374323" data-layout="1" data-color="blue" data-customize="false"></div></span>
+                <div class="wrap-share">
+                    <div class="fb-like" data-share="true" data-layout="button" data-width="450" data-show-faces="true"></div>
+                    <div class="zalo-share-button" data-href="" data-oaid="3982617747360131920" data-layout="1" data-color="blue" data-customize="false"  style="margin-right: 5px"></div>
+                    <div class="zalo-follow-only-button" data-oaid="3982617747360131920"></div>
+                </div>
+                <div class="rt">
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&amp;su=<?php the_title()?>&amp;to&amp;body=<?php the_permalink()?>&amp;fs=1&amp;tf=1" target="_blank" rel="nofollow" title="<?php the_title()?>"><i class="fas fa-envelope"></i></a>
+                    <a id="printButton" href="https://netbiz.net.vn/apicenter@/print_article&amp;i=1643" target="_blank" rel="nofollow"><span> | </span><i class="fas fa-print"></i></a>
+                </div>
+                
             </div>
 
             <div class="post-meta mb20">
@@ -114,7 +122,52 @@
                 <?php endif; ?>
             </div>
          </div>
-         
+
+        <div id="user-comment" class="clearfix mb40">
+            <div class="cat-title mb15">
+                <h2 class="cat-name fs-20 text-uppercase"><span>Bình luận</span></h2>
+            </div>
+
+            <div class="article-comment clearfix">
+                <div class="box-comment clearfix">
+                    <p class="content">
+                        <textarea name="__comment" class="__comment" placeholder="Viết tiếng Việt có dấu"></textarea>
+                    </p>
+                </div>
+                <div class="wrap-button">
+                    <button class="button-comment">Gửi bình luận</button>
+                    <div class="errors">Nội dung không được để trống!</div>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="list-comment">
+            <?php
+                $comments = get_comments(
+                    array(
+                        'status' => 'approve',
+                        'post_id' => $post->ID,
+                    )
+                );
+
+                foreach($comments as $comment) {
+                    ?>
+                        <div class="wrap-comment">
+                            <div class="comment-author">
+                                <?php echo $comment->comment_author ?>
+                            </div>
+                            <div class="comment-content">
+                                <?php echo $comment->comment_content ?>
+                            </div>
+                        </div>
+                        
+                    <?php
+                }
+            ?>
+        </div>
+        
+
          <div class="cat-listing title-2228 no-desc no-publish-time article-bdb-30 thumb-w240 mb40">
             <div class="cat-title cat-title-common mb25">
                <h2 class="cat-name fs-25">Tin bài khác</h2>
@@ -271,3 +324,51 @@
       </div>
    </div>
 </main>
+
+
+<div class="fancybox-overlay fancybox-overlay-fixed" style="">
+    <div class="fancybox-wrap fancybox-desktop fancybox-type-ajax fancybox-opened" tabindex="-1" style=" height: auto; position: absolute; top: 58px; left: 515px; opacity: 1; overflow: visible;">
+        <div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
+            <div class="fancybox-outer">
+                <div class="fancybox-inner" style="overflow: auto; height: auto;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ui-widget ui-widget-content ui-corner-all" style="margin: 0px; padding: 0px; min-width: 85%;">
+                        <tbody>
+                            <tr class="ui-widget-header">
+                                <td style="padding: 8px;" id="TITLE_HOLDER">Comment</td>
+                                <td><button class="__MB_USER_ACTION_CLOSED_COMMENT cancel-popup" name="__MB_USER_ACTION_CLOSED_COMMENT" type="button" style="margin-right: 5px;">X</button></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px;" valign="top">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="__MB_DONE_CM" style="display: none;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding: 8px;">
+                                                    <div style="padding: 5px; font-size: 16px; font-weight: bold; color: #093;" align="center">Bình luận của bạn đã được gửi thành công!</div>
+                                                    <div style="padding: 5px; font-size: 14px;" align="center">Cảm ơn!</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px;" align="center">
+                                                    <button class="__MB_USER_ACTION_CLOSED_COMMENT" name="__MB_USER_ACTION_CLOSED_COMMENT" type="button">Đóng</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <?php comments_template(); ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+get_footer();
+?>  

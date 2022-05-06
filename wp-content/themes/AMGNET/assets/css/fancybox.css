@@ -374,3 +374,13 @@
 	opacity : 0.4;
 	cursor: default;
 }
+
+#__MB_ARTICLE_COMMENTS_FINAL_FORM button, .__MB_USER_ACTION_CLOSED_COMMENT {
+	padding: 5px 10px;
+    background: #00000080;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}

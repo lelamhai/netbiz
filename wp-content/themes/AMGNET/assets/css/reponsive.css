@@ -333,6 +333,18 @@
         padding: 0 17px;
     }
 
+    .footer-bottom .social-link  {
+        display: flex;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer-bottom .social-link img {
+        width: 35px;
+        height: auto;
+        margin-right: 15px;
+    }
+
     .mastercms {
         padding-left: 17px;
         padding-right: 17px;

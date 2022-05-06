@@ -14,12 +14,14 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "50";
+    $version = "67";
     
     // ------------------- css ----------------- \\
     // style css
     wp_enqueue_style('agency-style', get_template_directory_uri() . "/style.css?v=$version", array(), $version);
     wp_enqueue_style('agency-player', get_template_directory_uri() . "/assets/css/player.css?v=$version", array(), $version);
+    wp_enqueue_style('agency-fancybox',   get_template_directory_uri() ."/assets/css/fancybox.css", array(), $version);
+    wp_enqueue_style('agency-comment', get_template_directory_uri() . "/assets/css/comment.css?v=$version", array(), $version);
     wp_enqueue_style('agency-reponsive', get_template_directory_uri() . "/assets/css/reponsive.css?v=$version", array(), $version);
     wp_enqueue_style('agency-slick', get_template_directory_uri() . "/assets/slick/slick.css?v=$version", array(), $version);
     wp_enqueue_style('agency-fontawesome',  "https://netbiz.net.vn/modules/frontend/themes/netbiz/css/fonts/fontawesome/css/all.min.css", array(), $version);

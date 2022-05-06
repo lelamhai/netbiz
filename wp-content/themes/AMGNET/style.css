@@ -2556,6 +2556,10 @@ body {
     justify-content: space-between;
 }
 
+.wrap-share {
+    display: flex;
+}
+
 .fb {
     background-color: rgb(37 116 250);
     color: #fff;
@@ -2598,6 +2602,46 @@ body {
 .social-network {
   display: flex;
   align-items: flex-start;
+}
+
+#user-comment .box-comment textarea {
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: Arial;
+  margin: 10px 0;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  outline-color: #b4b4b4;
+}
+
+.button-comment {
+  content: "Gửi bình luận";
+  text-transform: uppercase;
+  text-indent: none;
+  visibility: visible;
+  background: #f20078;
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  min-width: 106px;
+  height: 29px;
+  font-size: 14px;
+  font-family: 'UTMAvo';
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.wrap-button {
+    display: flex;
+    align-items: center;
+}
+
+.errors {
+  color: red;
+  padding-left: 20px;
+  display: none;
 }
 
 /* .show_main_menu {

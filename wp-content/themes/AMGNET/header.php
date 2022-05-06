@@ -54,7 +54,7 @@
             </div>
          </header>
          <div id="shortcut" class="navigation_scroll wrapper mobile">
-            <a href="https://netbiz.net.vn/" class="icon-home"></a>
+            <a href="<?php echo  get_home_url()?>" class="icon-home"></a>
             <div id="list-featured" class="list-shortcut">
                <?php
                   do_shortcode('[show_menu_mobile]');
