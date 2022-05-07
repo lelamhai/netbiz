@@ -2,6 +2,10 @@
 <div class="webpage pc-list">
    <div class="wrapper breadcrumb mt40 pb20">
       <div class="cat-title text-center">
+        <div class="hastag-list mobile">
+            <img src="<?php echo get_template_directory_uri()."/assets/imgs/icon-trend-up.png"?>" alt="">
+        </div>
+
          <div class="cat-name mb20">
             <a class="cat-name-lv1" href="<?php echo get_category_link($cateID)?>"><?php echo $cateName ?></a>
          </div>
