@@ -45,7 +45,7 @@
                 </div>
                 <div class="rt">
                     <a href="https://mail.google.com/mail/u/0/?view=cm&amp;su=<?php the_title()?>&amp;to&amp;body=<?php the_permalink()?>&amp;fs=1&amp;tf=1" target="_blank" rel="nofollow" title="<?php the_title()?>"><i class="fas fa-envelope"></i></a>
-                    <a id="printButton" href="https://netbiz.net.vn/apicenter@/print_article&amp;i=1643" target="_blank" rel="nofollow"><span> | </span><i class="fas fa-print"></i></a>
+                    <a id="printButton" href="<?php echo get_home_url()."/print"."?id=".get_the_ID()?> " target="_blank" rel="nofollow"><span> | </span><i class="fas fa-print"></i></a>
                 </div>
                 
             </div>
