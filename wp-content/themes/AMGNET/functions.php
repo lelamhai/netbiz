@@ -14,7 +14,7 @@ define('FOOTER_6', 'footer_6');
 
 function agency_regsiter_styles()
 {
-    $version = "67";
+    $version = "70";
     
     // ------------------- css ----------------- \\
     // style css

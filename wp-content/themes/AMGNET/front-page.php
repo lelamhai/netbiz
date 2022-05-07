@@ -536,7 +536,7 @@ get_header();
                                     <!-- <span class="ico-image"></span>                   -->
                                  </a>
                               </h3>
-                              <div class="article-desc"><?php the_content()?></div>
+                              <div class="article-desc"><?php the_excerpt()?></div>
                            </div>
                         </article>
 

@@ -161,7 +161,7 @@
 
       $(".button-comment").click(function() { 
          var comment = $.trim($('.__comment').val());
-         if(comment.length < 20 )
+         if(comment.length < 1 )
          {
             $(".errors").css("display","block");
             return false;

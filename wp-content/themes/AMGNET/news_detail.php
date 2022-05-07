@@ -327,11 +327,11 @@
 
 
 <div class="fancybox-overlay fancybox-overlay-fixed" style="">
-    <div class="fancybox-wrap fancybox-desktop fancybox-type-ajax fancybox-opened" tabindex="-1" style=" height: auto; position: absolute; top: 58px; left: 515px; opacity: 1; overflow: visible;">
-        <div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
+    <div class="fancybox-wrap fancybox-desktop fancybox-type-ajax fancybox-opened" tabindex="-1" style="">
+        <div class="fancybox-skin">
             <div class="fancybox-outer">
                 <div class="fancybox-inner" style="overflow: auto; height: auto;">
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ui-widget ui-widget-content ui-corner-all" style="margin: 0px; padding: 0px; min-width: 85%;">
+                    <table cellspacing="0" cellpadding="0" class="ui-widget ui-widget-content ui-corner-all" style="margin: 0px; padding: 0px">
                         <tbody>
                             <tr class="ui-widget-header">
                                 <td style="padding: 8px;" id="TITLE_HOLDER">Comment</td>
@@ -339,7 +339,7 @@
                             </tr>
                             <tr>
                                 <td style="padding: 8px;" valign="top">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="__MB_DONE_CM" style="display: none;">
+                                    <table cellspacing="0" cellpadding="0" class="__MB_DONE_CM" style="display: none;">
                                         <tbody>
                                             <tr>
                                                 <td style="padding: 8px;">
