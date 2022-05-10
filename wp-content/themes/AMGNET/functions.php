@@ -10,6 +10,8 @@ define('FOOTER_3', 'footer_3');
 define('FOOTER_4', 'footer_4');
 define('FOOTER_5', 'footer_5');
 define('FOOTER_6', 'footer_6');
+define('FOOTER_7', 'footer_7');
+define('FOOTER_8', 'footer_8');
 
 
 function agency_regsiter_styles()
@@ -54,6 +56,8 @@ if (function_exists('wp_nav_menu')) {
             FOOTER_4 => __('Menu Footer 4', 'text_domain'),
             FOOTER_5 => __('Menu Footer 5', 'text_domain'),
             FOOTER_6 => __('Menu Footer 6', 'text_domain'),
+            FOOTER_7 => __('Menu Footer 7', 'text_domain'),
+            FOOTER_8 => __('Menu Footer 8', 'text_domain'),
         ));
     }
     add_action('init', 'agency_wp_my_menus');
@@ -106,6 +110,7 @@ function show_video_menu()
 }
 add_shortcode('show_video_menu', 'show_video_menu');
 
+// menu footer
 function show_footer1_menu()
 {
     wp_nav_menu(array(
@@ -129,6 +134,7 @@ function show_footer1_menu()
 }
 add_shortcode('show_footer1_menu', 'show_footer1_menu');
 
+
 function show_footer2_menu()
 {
     wp_nav_menu(array(
@@ -151,6 +157,152 @@ function show_footer2_menu()
     ));
 }
 add_shortcode('show_footer2_menu', 'show_footer2_menu');
+
+
+function show_footer3_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_3,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer3_menu', 'show_footer3_menu');
+
+
+function show_footer4_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_4,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer4_menu', 'show_footer4_menu');
+
+
+function show_footer5_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_5,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer5_menu', 'show_footer5_menu');
+
+
+function show_footer6_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_6,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer6_menu', 'show_footer6_menu');
+
+
+
+function show_footer7_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_7,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer7_menu', 'show_footer7_menu');
+
+
+
+function show_footer8_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => FOOTER_8,
+        'menu' => '',
+        'container' => '',
+        'container_class' => '',
+        'container_id' => '',
+        'menu_class' => '',
+        'menu_id' => '',
+        'echo' => true,
+        'fallback_cb' => '',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+        'walker' => ''
+    ));
+}
+add_shortcode('show_footer8_menu', 'show_footer8_menu');
 
 /**
  * Setup Images Size
