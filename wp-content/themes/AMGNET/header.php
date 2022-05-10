@@ -5,12 +5,15 @@
          <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" > 
          <meta name="viewport" content="width=device-width, initial-scale=1" />
          <title><?php echo get_bloginfo( 'name' );?></title>
-         <meta property="og:url"           content="<?php echo get_the_permalink(get_the_ID())?>" />
-         <meta property="og:title"         content="<?php echo get_the_title(get_the_ID())?>" />
+		   <meta property="og:url"           content="<?php echo get_the_permalink(get_the_ID())?>" />
+	  	   <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID())?>" />
+		   <meta property="og:image:secure_url" content="<?php echo get_the_post_thumbnail_url(get_the_ID())?>" />
+	   	<meta property="og:type"          content="image/jpeg" />
+		   <meta property="og:image:width" content="400" />
+		   <meta property="og:image:height" content="300" />
+	      <meta property="og:title"         content="<?php echo get_the_title(get_the_ID())?>" />
          <meta property="og:description"   content="<?php echo get_the_excerpt(get_the_ID())?>" />
-         <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(get_the_ID())?>" />
-         <meta property="og:type"          content="website" />
-
+		   <meta property="og:image:alt" content="<?php echo get_the_title(get_the_ID())?>" />
         <?php
             wp_head();
         ?>

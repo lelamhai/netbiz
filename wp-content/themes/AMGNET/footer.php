@@ -15,7 +15,7 @@
                   <p>Email: tham.dinh@mcv.com.vn</p>
                </div>
                <div class="footer-right rt">
-                  <ul class="footer-menu">
+                  <ul class="footer-menu pc">
                      <?php
                         do_shortcode('[show_footer1_menu]');
                      ?>
