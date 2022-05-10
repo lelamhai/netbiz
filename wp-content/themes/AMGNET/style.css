@@ -2644,6 +2644,15 @@ body {
   display: none;
 }
 
+.social-link-item img {
+	width:30px;
+	height:auto;
+}
+
+.social-link-item {
+	margin-right: 15px;	
+}
+
 /* .show_main_menu {
   -webkit-transform: translate(0);
           transform: translate(0);
